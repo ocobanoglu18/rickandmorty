@@ -11,7 +11,7 @@ import SwiftUI
 struct R_MApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView().preferredColorScheme(.dark)
         }
     }
 }
