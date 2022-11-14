@@ -14,12 +14,12 @@ class LocationViewViewModel : ObservableObject {
     @Published var locationState2:LocationViewModelState2=LocationViewModelState2.initial
     let rickAndMoortyDataService:RickAndMortyDataServices=RickAndMortyDataServices()
     var cancellable = Set<AnyCancellable>()
-    @Published var list = [Location]()
+    @Published var list: Location?
     @Published var charList: Results?
    
     init() {
         getAllLocations()
-        getAllLocationbyID(charID: charList!.id)
+        //getAllLocationbyID(charID: charList!.id)
     }
     
     func getAllLocations(){
@@ -40,7 +40,8 @@ class LocationViewViewModel : ObservableObject {
     }
     
         func getAllLocationbyID(charID:Int){
-            rickAndMoortyDataService.getAllLocationbyID(charID:charID)
+         
+            rickAndMoortyDataService.getAllLocationbyID(charID:charList!.id)
                 .sink { [weak self] completion in
                     switch completion{
     
@@ -55,12 +56,12 @@ class LocationViewViewModel : ObservableObject {
                 .store(in: &cancellable)
         }
     
-
+    //    func getLocationDetailsByCharId(for id:Location) -> Int {
+    //        var result=list.filter {
+    //            $0.id==id
+    //        }
+    //        return result[0]
+    //    }
     
-    func getLocationDetailsByCharId(for id:Int) -> Location {
-        var result=list.filter {
-            $0.id==id
-        }
-        return result[0]
-    }
+
 }

@@ -16,6 +16,7 @@ struct CharacterView: View {
     
     
     
+    
     var body: some View {
         NavigationView {
             
