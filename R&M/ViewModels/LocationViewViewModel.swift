@@ -27,7 +27,6 @@ class LocationViewViewModel : ObservableObject {
         rickAndMoortyDataService.getAllLocations()
             .sink { [weak self] completion in
                 switch completion{
-                    
                 case .finished:
                     print("finish")
                 case .failure(let error):
