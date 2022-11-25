@@ -13,5 +13,4 @@ protocol RickAndMortyService {
     func getAllLocations() -> AnyPublisher<PagedLocation, Error>
     func getAllEpisode() -> AnyPublisher<PagedEpisode, Error>
     func getAllLocationbyID(charID:Int) -> AnyPublisher<Location, Error>
- 
 }

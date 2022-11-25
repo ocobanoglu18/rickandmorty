@@ -43,15 +43,12 @@ struct EpisodeView: View {
                                     EpisodeDetailView(episode:results)
                                 } label: {
                                     VStack{
-                                        
                                         Spacer()
                                         HStack {
                                             
                                             Image(systemName: "text.quote").fontWeight(.bold).padding(.leading)
                                             Text(results.name).lineLimit(2).fontWeight(.bold)
                                             Spacer()
-                                            
-                                            
                                         }
                                         Spacer()
                                         HStack {

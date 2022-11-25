@@ -13,6 +13,8 @@ class EpisodeViewViewModel : ObservableObject {
     @Published var episodeState:EpisodeViewModelState=EpisodeViewModelState.initial
     let rickAndMoortyDataService:RickAndMortyDataServices=RickAndMortyDataServices()
     var cancellable = Set<AnyCancellable>()
+    @Published var charList = [Results]()
+    @Published var location = [Location]()
    
     init() {
         getAllEpisodes()
@@ -31,6 +33,7 @@ class EpisodeViewViewModel : ObservableObject {
                 }
             } receiveValue: { [weak self] PagedEpisode in
                 self?.episodeState=EpisodeViewModelState.loaded(episode: PagedEpisode)
+                
             }
             .store(in: &cancellable)
     }

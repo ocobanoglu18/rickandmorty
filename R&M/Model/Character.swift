@@ -28,21 +28,21 @@ struct Info : Codable{
 }
 
 struct Results: Identifiable,Codable {
-    let id: Int
-    let name: String
-    let status: String
-    let species: String
-    let type: String
-    let gender: String
-    let origin:LocationChar
-    let location: LocationChar
-    let image: String
-    let episode: [String]
-    let url: String
-    let created: String
+    let id: Int?
+    let name: String?
+    let status: String?
+    let species: String?
+    let type: String?
+    let gender: String?
+    let origin:Location?
+    let location: Location?
+    let image: String?
+    let episode: [String]?
+    let url: String?
+    let created: String?
 }
 
 struct LocationChar:Codable {
-    let name:String//": "Citadel of Ricks",
+    let name:String?
   
 }

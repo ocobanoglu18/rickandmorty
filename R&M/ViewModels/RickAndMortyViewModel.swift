@@ -14,8 +14,8 @@ class RickAndMortyViewModel : ObservableObject {
     @Published var charactersState:CharacterViewModelState=CharacterViewModelState.initial
     let rickAndMoortyDataService:RickAndMortyDataServices=RickAndMortyDataServices()
     var cancellable = Set<AnyCancellable>()
-    @Published var charList: Results?
-    @Published var location: Location?
+    @Published var charList = [Results]()
+    @Published var location = [Location]()
     
     init() {
         getAllCharacters()
@@ -34,24 +34,9 @@ class RickAndMortyViewModel : ObservableObject {
                 }
             } receiveValue: { [weak self] Characters in
                 self?.charactersState=CharacterViewModelState.loaded(characters: Characters)
+                self!.charList=Characters.results
             }
             .store(in: &cancellable)
     }
-    
-    func getLocationDetailsByCharId(for id:Results) -> Int {
-        
-        if (charList!.id==location!.id){
-            
-            return charList!.id
-            
-        }else{
-            
-            return 0
-            
-        }
-    }
 
-    
-
-    
 }
