@@ -18,7 +18,7 @@ struct CharacterDetailView: View {
     var body: some View {
         VStack{
             VStack{
-                AsyncImage(url: URL(string: results!.image)){ image in
+                AsyncImage(url: URL(string: results!.image!)){ image in
                     
                     image.resizable()
                         .cornerRadius(10)
@@ -34,28 +34,28 @@ struct CharacterDetailView: View {
                     
                     Text("Character Name")
                     Spacer()
-                    Text(results!.name).fontWeight(.bold)
+                    Text(results?.name ?? " ").fontWeight(.bold)
                     Spacer()
                 }.padding(.leading).padding(.top)
                 HStack {
                     
                     Text("Character Gender")
                     Spacer()
-                    Text(results!.gender).fontWeight(.bold)
+                    Text(results?.gender).fontWeight(.bold)
                     Spacer()
                 }.padding(.leading).padding(.top)
                 HStack {
                     
                     Text("Character Type")
                     Spacer()
-                    Text(results!.type).fontWeight(.bold)
+                    Text(results?.type).fontWeight(.bold)
                     Spacer()
                 }.padding(.leading).padding(.top)
                 HStack {
                     
                     Text("Character Created Date")
                     Spacer()
-                    Text(results!.created).fontWeight(.bold)
+                    Text(results?.created).fontWeight(.bold)
                     Spacer()
                 }.padding(.leading).padding(.top)
                 HStack {

@@ -16,6 +16,12 @@ class LocationViewViewModel : ObservableObject {
     var cancellable = Set<AnyCancellable>()
     @Published var charList = [Results]()
     @Published var location = [Location]()
+    
+    
+    
+    let service = Service.shared
+
+    @Published var locationResponse = [LocationResult]()
    
     init() {
         getAllLocations()
@@ -39,4 +45,23 @@ class LocationViewViewModel : ObservableObject {
     }
     
 
+
+    func initialize() {
+        fetchContent()
+    }
+
+    func fetchContent() {
+        service.fetchRequest(endpointType: endpointType.location) { [weak self] (response: Result<LocationModel<InfoModel>, RickandMortyError>) in
+            switch response {
+            case .success(let model):
+                guard let results = model.results else { return }
+                self?.locationResponse = results
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+
+        }
+    }
+    
+    
 }
