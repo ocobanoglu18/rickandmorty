@@ -17,6 +17,11 @@ class RickAndMortyViewModel : ObservableObject {
     @Published var charList = [Results]()
     @Published var location = [Location]()
     
+    
+    
+    let service = Service.shared
+    @Published var rickAndMortyResponse = [Character]()
+    
     init() {
         getAllCharacters()
     }
@@ -37,6 +42,24 @@ class RickAndMortyViewModel : ObservableObject {
                 self!.charList=Characters.results
             }
             .store(in: &cancellable)
+    }
+    
+
+
+    func initialize(filter: String) {
+        fetchContent(filter: filter)
+    }
+
+    func fetchContent(filter: String) {
+        service.fetchCharactersRequest(filter: filter, endpointType: endpointType.character) { [weak self] response in
+            switch response {
+            case .success(let model):
+                guard let results = model.results else { return }
+                self?.rickAndMortyResponse = results
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
     }
 
 }

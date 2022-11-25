@@ -11,7 +11,7 @@ struct EpisodeDetailView: View {
     @ObservedObject var viewModel:RickAndMortyViewModel=RickAndMortyViewModel()
     @State var episode: Episode?
     @State var liked = false
-    @EnvironmentObject var favorites: Favorites
+
     
     var body: some View {
         Spacer()
