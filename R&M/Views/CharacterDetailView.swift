@@ -10,7 +10,7 @@ import SwiftUI
 struct CharacterDetailView: View {
     @ObservedObject var viewModel:RickAndMortyViewModel=RickAndMortyViewModel()
     @ObservedObject var LocationViewModel:LocationViewViewModel=LocationViewViewModel()
-    
+
     @State var results: Results?
     @State var location:Location?
     
@@ -76,8 +76,7 @@ struct CharacterDetailView: View {
                     
                     Text("Character Status")
                     Spacer()
-                    Text(results!.status).fontWeight(.bold)
-                    Spacer()
+
                 }.padding(.leading).padding(.top)
           
             }.padding(.top)

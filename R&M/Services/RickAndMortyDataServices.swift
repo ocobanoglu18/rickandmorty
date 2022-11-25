@@ -34,6 +34,7 @@ class RickAndMortyDataServices: RickAndMortyService {
             .receive(on: DispatchQueue.main)
             .eraseToAnyPublisher()
     }
+    
     func getAllLocationbyID(charID:Int) -> AnyPublisher<Location, Error> {
       
         URLSession.shared.dataTaskPublisher(for: URL(string: "https://rickandmortyapi.com/api/episode/\(charID)")!)

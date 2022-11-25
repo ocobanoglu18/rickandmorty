@@ -12,16 +12,13 @@ struct CharacterView: View {
     @StateObject var viewModel:RickAndMortyViewModel=RickAndMortyViewModel()
     @StateObject var viewModelEpisode:EpisodeViewViewModel=EpisodeViewViewModel()
     @State private var searchTextChar = ""
-    @StateObject var favorites=Favorites()
-    
-    
-    
+    @State private var searchText = ""
+    @State var searchList=[Results]()
+  
     var body: some View {
         NavigationView {
-            
             ScrollView(showsIndicators: false){
                 switch viewModel.charactersState{
-                    
                 case .initial:
                     ProgressView()
                 case .loading:
@@ -29,9 +26,8 @@ struct CharacterView: View {
                 case .error(let error):
                     Text(error)
                 case .loaded(let data):
-                    
-                    Text("\(searchTextChar)")
-                        .searchable(text: $searchTextChar, prompt: "Look for something")
+                 
+                     
                     VStack {
                         HStack {
                             
@@ -62,8 +58,6 @@ struct CharacterView: View {
                             ScrollView(.horizontal,showsIndicators: false){
                                 HStack {
                                     ForEach(data.results) { results in
-                                        
-                                        
                                         VStack {
                                             
                                             HStack {
@@ -92,12 +86,10 @@ struct CharacterView: View {
                                             
                                             
                                         }   .frame(width:170,height: 65).background(Color.purple).cornerRadius(15)
-                                        
                                     }
                                 }
                             }
                         }
-                        
                         HStack {
                             
                             Text("Characters").padding(.leading).foregroundColor(Color.white).fontWeight(.bold)
@@ -107,7 +99,7 @@ struct CharacterView: View {
                             
                             HStack {
                                 VStack{
-                                    AsyncImage(url: URL(string: results.image)){ image in
+                                    AsyncImage(url: URL(string: results.image!)){ image in
                                         
                                         image.resizable()
                                             .cornerRadius(10)
@@ -121,32 +113,25 @@ struct CharacterView: View {
                                 Spacer()
                                 VStack{
                                     Spacer()
-                                    Text(results.name)
+                                    Text(results.name!)
                                         .font(.system(size:22)).bold()
                                     HStack{
-                                        Text(results.gender)
+                                        Text(results.gender!)
                                             .font(.system(size:16))
                                             .fontWeight(.regular)
                                         
                                         
                                         Divider().foregroundColor(Color.white).fontWeight(.bold).frame(height:16)
                                         
-                                        Text(results.species)
+                                        Text(results.species!)
                                             .font(.system(size:16))
                                             .fontWeight(.light)
                                         
                                     }
                                     Spacer()
-                                    
                                 }
                                 Spacer()
                                 HStack{
-                                    //                                    Button {
-                                    //                                        CharacterDetailView(character:character)
-                                    //                                    } label: {
-                                    //                                    Image(systemName: "arrow.right")
-                                    //                                    }
-                                    
                                     NavigationLink {
                                         CharacterDetailView(results:results)
                                     } label: {
@@ -155,42 +140,26 @@ struct CharacterView: View {
                                             .padding(.top,5)
                                             .padding(.trailing,6)
                                             .foregroundColor(.white)
-                                        
                                     }
-                                    
                                 }
                                 Spacer()
-                                
-                                
-                                
                             }.frame(width:370, height: 70).background(CustomColor.cardColor)
                                 .cornerRadius(20)
-                            
-                            
-                            
                             Divider()
                         }
                     }
                 }
-                
-            }
-            
-            .toolbar {
+            }.toolbar {
                 ToolbarItem(placement: .principal) {
-                    
-                    
                     Text("Rick&Morty App!").foregroundColor(Color.white).fontWeight(.bold)
-                    
                 }
             }
             
-            
-            
-        }
-        
+        }   .searchable(text: $searchText, prompt: "Look for something")
+          
         
     }
-    
+
     
 }
 

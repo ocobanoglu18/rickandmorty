@@ -14,7 +14,7 @@ struct CustomColor {
 }
 
 struct ContentView: View {
-    @StateObject var favorites = Favorites()
+//    @StateObject var favorites = Favorites()
     var body: some View {
  
         TabView{
@@ -34,7 +34,7 @@ struct ContentView: View {
         
             
         }.accentColor(Color.white)
-        .environmentObject(favorites)
+//        .environmentObject(favorites)
   
        
     }
