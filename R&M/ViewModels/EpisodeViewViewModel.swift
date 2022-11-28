@@ -8,36 +8,32 @@
 import Foundation
 import Combine
 
-class EpisodeViewViewModel : ObservableObject {
+
+
+class EpisodeViewViewModel: ObservableObject {
+    let service = Service.shared
     
-    @Published var episodeState:EpisodeViewModelState=EpisodeViewModelState.initial
-    let rickAndMoortyDataService:RickAndMortyDataServices=RickAndMortyDataServices()
-    var cancellable = Set<AnyCancellable>()
-    @Published var charList = [Results]()
-    @Published var location = [Location]()
-   
-    init() {
-        getAllEpisodes()
+    @Published var episodeResponse = [EpisodeResult]()
+    
+    func initialize() {
+        fetchContent()
     }
     
-    func getAllEpisodes(){
-        episodeState=EpisodeViewModelState.loading
-        rickAndMoortyDataService.getAllEpisode()
-            .sink { [weak self] completion in
-                switch completion{
-                    
-                case .finished:
-                    print("finish")
-                case .failure(let error):
-                    self?.episodeState=EpisodeViewModelState.error(errorMessage: "\(error)")
-                }
-            } receiveValue: { [weak self] PagedEpisode in
-                self?.episodeState=EpisodeViewModelState.loaded(episode: PagedEpisode)
-                
+    func fetchContent() {
+        service.fetchRequest(endpointType: endpointType.episode) { [weak self] (response: Result<EpisodesModel<InfoModel>, RickandMortyError>) in
+            switch response {
+            case .success(let model):
+                guard let results = model.results else { return }
+                self?.episodeResponse = results
+            case .failure(let error):
+                print(error.localizedDescription)
             }
-            .store(in: &cancellable)
+            
+        }
     }
+    
+}
     
     
   
-}
+

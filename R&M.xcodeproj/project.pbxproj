@@ -17,6 +17,9 @@
 		09CCD4382930B69E00E91B09 /* LocationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09CCD4372930B69E00E91B09 /* LocationModel.swift */; };
 		09CCD43A2930B6BC00E91B09 /* EpisodeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09CCD4392930B6BC00E91B09 /* EpisodeModel.swift */; };
 		09CCD43C2934C67300E91B09 /* CharacterCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09CCD43B2934C67300E91B09 /* CharacterCardView.swift */; };
+		09CCD43F2934D21100E91B09 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09CCD43E2934D21100E91B09 /* Extension.swift */; };
+		09CCD4412934D74800E91B09 /* EpisodeDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09CCD4402934D74800E91B09 /* EpisodeDetailViewModel.swift */; };
+		09CCD4432934D85F00E91B09 /* EpisodeCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09CCD4422934D85F00E91B09 /* EpisodeCardView.swift */; };
 		09D2D94929124ADC00BB18C1 /* R_MApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09D2D94829124ADC00BB18C1 /* R_MApp.swift */; };
 		09D2D94B29124ADC00BB18C1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09D2D94A29124ADC00BB18C1 /* ContentView.swift */; };
 		09D2D94D29124ADD00BB18C1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 09D2D94C29124ADD00BB18C1 /* Assets.xcassets */; };
@@ -43,6 +46,9 @@
 		09CCD4372930B69E00E91B09 /* LocationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationModel.swift; sourceTree = "<group>"; };
 		09CCD4392930B6BC00E91B09 /* EpisodeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeModel.swift; sourceTree = "<group>"; };
 		09CCD43B2934C67300E91B09 /* CharacterCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterCardView.swift; sourceTree = "<group>"; };
+		09CCD43E2934D21100E91B09 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
+		09CCD4402934D74800E91B09 /* EpisodeDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeDetailViewModel.swift; sourceTree = "<group>"; };
+		09CCD4422934D85F00E91B09 /* EpisodeCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeCardView.swift; sourceTree = "<group>"; };
 		09D2D94529124ADC00BB18C1 /* R&M.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "R&M.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		09D2D94829124ADC00BB18C1 /* R_MApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = R_MApp.swift; sourceTree = "<group>"; };
 		09D2D94A29124ADC00BB18C1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -70,6 +76,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		09CCD4442934DB3400E91B09 /* Character */ = {
+			isa = PBXGroup;
+			children = (
+				09D2D9562912558B00BB18C1 /* CharacterView.swift */,
+				09CCD43B2934C67300E91B09 /* CharacterCardView.swift */,
+				09F5E5E82918E70C000A1BF6 /* CharacterDetailView.swift */,
+			);
+			path = Character;
+			sourceTree = "<group>";
+		};
+		09CCD4452934DB4300E91B09 /* Episode */ = {
+			isa = PBXGroup;
+			children = (
+				09FC5D332914F6E7008D1A4C /* EpisodeView.swift */,
+				09CCD4422934D85F00E91B09 /* EpisodeCardView.swift */,
+				09AFED5729190F200011FE94 /* EpisodeDetailView.swift */,
+			);
+			path = Episode;
+			sourceTree = "<group>";
+		};
 		09D2D93C29124ADB00BB18C1 = {
 			isa = PBXGroup;
 			children = (
@@ -112,12 +138,9 @@
 		09FC5D3729150CD4008D1A4C /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				09D2D9562912558B00BB18C1 /* CharacterView.swift */,
-				09CCD43B2934C67300E91B09 /* CharacterCardView.swift */,
-				09F5E5E82918E70C000A1BF6 /* CharacterDetailView.swift */,
+				09CCD4442934DB3400E91B09 /* Character */,
+				09CCD4452934DB4300E91B09 /* Episode */,
 				09D2D958291255D900BB18C1 /* Locations.swift */,
-				09FC5D332914F6E7008D1A4C /* EpisodeView.swift */,
-				09AFED5729190F200011FE94 /* EpisodeDetailView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -142,6 +165,7 @@
 				09D2D95C2912581D00BB18C1 /* RickAndMortyViewModel.swift */,
 				096FEF5B291CC6F200B73F1E /* LocationViewViewModel.swift */,
 				096FEF5D291CC70800B73F1E /* EpisodeViewViewModel.swift */,
+				09CCD4402934D74800E91B09 /* EpisodeDetailViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -152,6 +176,7 @@
 				09D2D95E2912584900BB18C1 /* RickAndMortyDataServices.swift */,
 				09D2D96029125A1900BB18C1 /* RickAndMortyService.swift */,
 				09CCD4332930B1EF00E91B09 /* Service.swift */,
+				09CCD43E2934D21100E91B09 /* Extension.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -228,9 +253,11 @@
 			files = (
 				09D2D9572912558B00BB18C1 /* CharacterView.swift in Sources */,
 				09FC5D342914F6E8008D1A4C /* EpisodeView.swift in Sources */,
+				09CCD4412934D74800E91B09 /* EpisodeDetailViewModel.swift in Sources */,
 				09AFED5829190F200011FE94 /* EpisodeDetailView.swift in Sources */,
 				096FEF5C291CC6F200B73F1E /* LocationViewViewModel.swift in Sources */,
 				09F5E5E92918E70C000A1BF6 /* CharacterDetailView.swift in Sources */,
+				09CCD4432934D85F00E91B09 /* EpisodeCardView.swift in Sources */,
 				096FEF5E291CC70800B73F1E /* EpisodeViewViewModel.swift in Sources */,
 				09D2D94B29124ADC00BB18C1 /* ContentView.swift in Sources */,
 				09D2D95B2912569E00BB18C1 /* Character.swift in Sources */,
@@ -241,6 +268,7 @@
 				09CCD43C2934C67300E91B09 /* CharacterCardView.swift in Sources */,
 				09CCD4342930B1EF00E91B09 /* Service.swift in Sources */,
 				09D2D96129125A1900BB18C1 /* RickAndMortyService.swift in Sources */,
+				09CCD43F2934D21100E91B09 /* Extension.swift in Sources */,
 				09D2D95F2912584900BB18C1 /* RickAndMortyDataServices.swift in Sources */,
 				09AFED562918FD1D0011FE94 /* Favorites.swift in Sources */,
 				09CCD4362930B3A300E91B09 /* CharacterModel.swift in Sources */,

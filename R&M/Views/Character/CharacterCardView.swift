@@ -9,6 +9,9 @@ import SwiftUI
 
 struct CharacterCardView: View {
     var character: Character?
+    @State var selectedCharacter: Character?
+    @ObservedObject var charactersThisEpisode = EpisodeViewViewModel()
+    
     
     var body: some View {
         
@@ -46,17 +49,17 @@ struct CharacterCardView: View {
                 Spacer()
             }
             Spacer()
-//            HStack{
-//                NavigationLink {
-////                                        CharacterDetailView(results:results)
-//                } label: {
-//                    Image(systemName: "arrow.right.circle")
-//                        .font(.system(size:25))
-//                        .padding(.top,5)
-//                        .padding(.trailing,6)
-//                        .foregroundColor(.white)
-//                }
-//            }
+            HStack{
+                NavigationLink {
+                CharacterDetailView(selectedCharacter:character)
+                } label: {
+                    Image(systemName: "arrow.right.circle")
+                        .font(.system(size:25))
+                        .padding(.top,5)
+                        .padding(.trailing,6)
+                        .foregroundColor(.white)
+                }
+            }
             Spacer()
         }.frame(width:370, height: 70).background(CustomColor.cardColor)
             .cornerRadius(20)
