@@ -42,49 +42,49 @@ struct CharacterView: View {
                             Text("Favorite Episodes").padding(.leading).foregroundColor(Color.white).fontWeight(.bold)
                             Spacer()
                         }
-                        switch viewModelEpisode.episodeState{
-                        case .initial:
-                            ProgressView()
-                        case .loading:
-                            ProgressView()
-                        case .error(let error):
-                            Text(error)
-                        case .loaded(let data):
-                            ScrollView(.horizontal,showsIndicators: false){
-                                HStack {
-                                    ForEach(data.results) { results in
-                                        VStack {
-                                            
-                                            HStack {
-                                                
-                                                Image(systemName: "text.quote").padding(.leading).fontWeight(.bold)
-                                                Spacer()
-                                                Text(results.name).lineLimit(2).fontWeight(.bold).font(.system(size: 12))
-                                                Spacer()
-                                            }
-                                            
-                                            HStack {
-                                                
-                                                Image(systemName: "calendar").padding(.leading)
-                                                Spacer()
-                                                Text(results.air_date).font(.system(size: 8))
-                                                Spacer()
-                                            }
-                                            
-                                            HStack {
-                                                
-                                                Image(systemName: "list.dash.header.rectangle").padding(.leading)
-                                                Spacer()
-                                                Text(results.episode) .font(.system(size: 10))
-                                                Spacer()
-                                            }
-                                            
-                                            
-                                        }   .frame(width:170,height: 65).background(Color.purple).cornerRadius(15)
-                                    }
-                                }
-                            }
-                        }
+//                        switch viewModelEpisode.episodeState{
+//                        case .initial:
+//                            ProgressView()
+//                        case .loading:
+//                            ProgressView()
+//                        case .error(let error):
+//                            Text(error)
+//                        case .loaded(let data):
+//                            ScrollView(.horizontal,showsIndicators: false){
+//                                HStack {
+//                                    ForEach(data.results) { results in
+//                                        VStack {
+//                                            
+//                                            HStack {
+//                                                
+//                                                Image(systemName: "text.quote").padding(.leading).fontWeight(.bold)
+//                                                Spacer()
+//                                                Text(results.name).lineLimit(2).fontWeight(.bold).font(.system(size: 12))
+//                                                Spacer()
+//                                            }
+//                                            
+//                                            HStack {
+//                                                
+//                                                Image(systemName: "calendar").padding(.leading)
+//                                                Spacer()
+//                                                Text(results.air_date).font(.system(size: 8))
+//                                                Spacer()
+//                                            }
+//                                            
+//                                            HStack {
+//                                                
+//                                                Image(systemName: "list.dash.header.rectangle").padding(.leading)
+//                                                Spacer()
+//                                                Text(results.episode) .font(.system(size: 10))
+//                                                Spacer()
+//                                            }
+//                                            
+//                                            
+//                                        }   .frame(width:170,height: 65).background(Color.purple).cornerRadius(15)
+//                                    }
+//                                }
+//                            }
+//                        }
                         HStack {
                             
                             Text("Characters").padding(.leading).foregroundColor(Color.white).fontWeight(.bold)
