@@ -13,7 +13,6 @@ struct EpisodeView: View {
         GridItem(.adaptive(minimum: 150))
     ]
     @State var liked = false
-    @EnvironmentObject var favorites: Favorites
     @State var episode: Episode?
     
     

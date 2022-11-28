@@ -16,8 +16,8 @@ case error(errorMessage:String)
 
 
 struct Characters : Codable{
-    let info: Info
-    let results: [Results]
+    let info: Info?
+    let results: [Results]?
 }
 
 struct Info : Codable{
