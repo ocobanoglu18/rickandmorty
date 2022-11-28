@@ -34,42 +34,42 @@ struct CharacterDetailView: View {
                     
                     Text("Character Name")
                     Spacer()
-                    Text(results?.name ?? " ").fontWeight(.bold)
+                    Text(results?.name ?? "").fontWeight(.bold)
                     Spacer()
                 }.padding(.leading).padding(.top)
                 HStack {
                     
                     Text("Character Gender")
                     Spacer()
-                    Text(results?.gender).fontWeight(.bold)
+                    Text(results?.gender ?? "").fontWeight(.bold)
                     Spacer()
                 }.padding(.leading).padding(.top)
                 HStack {
                     
                     Text("Character Type")
                     Spacer()
-                    Text(results?.type).fontWeight(.bold)
+                    Text(results?.type ?? "").fontWeight(.bold)
                     Spacer()
                 }.padding(.leading).padding(.top)
                 HStack {
                     
                     Text("Character Created Date")
                     Spacer()
-                    Text(results?.created).fontWeight(.bold)
+                    Text(results?.created ?? "").fontWeight(.bold)
                     Spacer()
                 }.padding(.leading).padding(.top)
                 HStack {
                     
                     Text("Character Species")
                     Spacer()
-                    Text(results!.species).fontWeight(.bold)
+                    Text(results?.species ?? "").fontWeight(.bold)
                     Spacer()
                 }.padding(.leading).padding(.top)
                 HStack {
                     
                     Text("Character Status")
                     Spacer()
-                    Text(results!.status).fontWeight(.bold)
+                    Text(results?.status ?? "").fontWeight(.bold)
                     Spacer()
                 }.padding(.leading).padding(.top)
                 HStack {

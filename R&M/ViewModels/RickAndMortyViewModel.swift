@@ -17,32 +17,30 @@ class RickAndMortyViewModel : ObservableObject {
     @Published var charList = [Results]()
     @Published var location = [Location]()
     
-    
-    
     let service = Service.shared
     @Published var rickAndMortyResponse = [Character]()
     
-    init() {
-        getAllCharacters()
-    }
-    
-    func getAllCharacters(){
-        charactersState=CharacterViewModelState.loading
-        rickAndMoortyDataService.getAllCharacters()
-            .sink { [weak self] completion in
-                switch completion{
-                    
-                case .finished:
-                    print("finish")
-                case .failure(let error):
-                    self?.charactersState=CharacterViewModelState.error(errorMessage: "\(error)")
-                }
-            } receiveValue: { [weak self] Characters in
-                self?.charactersState=CharacterViewModelState.loaded(characters: Characters)
-                self!.charList=Characters.results
-            }
-            .store(in: &cancellable)
-    }
+//    init() {
+//        getAllCharacters()
+//    }
+//
+//    func getAllCharacters(){
+//        charactersState=CharacterViewModelState.loading
+//        rickAndMoortyDataService.getAllCharacters()
+//            .sink { [weak self] completion in
+//                switch completion{
+//
+//                case .finished:
+//                    print("finish")
+//                case .failure(let error):
+//                    self?.charactersState=CharacterViewModelState.error(errorMessage: "\(error)")
+//                }
+//            } receiveValue: { [weak self] Characters in
+//                self?.charactersState=CharacterViewModelState.loaded(characters: Characters)
+//                self!.charList=Characters.results!
+//            }
+//            .store(in: &cancellable)
+//    }
     
 
 

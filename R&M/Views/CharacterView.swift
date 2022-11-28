@@ -9,23 +9,18 @@ import SwiftUI
 
 struct CharacterView: View {
     
-    @StateObject var viewModel:RickAndMortyViewModel=RickAndMortyViewModel()
+    @StateObject var viewModel=RickAndMortyViewModel()
     @StateObject var viewModelEpisode:EpisodeViewViewModel=EpisodeViewViewModel()
     @State private var searchTextChar = ""
     @State private var searchText = ""
+    @State var filter = ""
+  
     @State var searchList=[Results]()
   
     var body: some View {
         NavigationView {
             ScrollView(showsIndicators: false){
-                switch viewModel.charactersState{
-                case .initial:
-                    ProgressView()
-                case .loading:
-                    ProgressView()
-                case .error(let error):
-                    Text(error)
-                case .loaded(let data):
+           
                  
                      
                     VStack {
@@ -95,60 +90,88 @@ struct CharacterView: View {
                             Text("Characters").padding(.leading).foregroundColor(Color.white).fontWeight(.bold)
                             Spacer()
                         }
-                        ForEach(data.results){ results in
-                            
-                            HStack {
-                                VStack{
-                                    AsyncImage(url: URL(string: results.image!)){ image in
-                                        
-                                        image.resizable()
-                                            .cornerRadius(10)
-                                        
-                                        
-                                    } placeholder: {
-                                        ProgressView()
-                                    }
-                                    .frame(width: 130, height: 120)
+                        HStack(spacing: 10) {
+                            Button {
+                                filter = ""
+                                viewModel.initialize(filter: filter)
+                            } label: {
+                                ZStack {
+                                    RoundedRectangle(cornerRadius: 5)
+                                        .frame(width: 60, height: 30, alignment: .center)
+                                        .foregroundColor(.black)
+                                    Text("Main")
+                                        .foregroundColor(Color.white)
                                 }
-                                Spacer()
-                                VStack{
-                                    Spacer()
-                                    Text(results.name!)
-                                        .font(.system(size:22)).bold()
-                                    HStack{
-                                        Text(results.gender!)
-                                            .font(.system(size:16))
-                                            .fontWeight(.regular)
-                                        
-                                        
-                                        Divider().foregroundColor(Color.white).fontWeight(.bold).frame(height:16)
-                                        
-                                        Text(results.species!)
-                                            .font(.system(size:16))
-                                            .fontWeight(.light)
-                                        
-                                    }
-                                    Spacer()
-                                }
-                                Spacer()
-                                HStack{
-                                    NavigationLink {
-                                        CharacterDetailView(results:results)
-                                    } label: {
-                                        Image(systemName: "arrow.right.circle")
-                                            .font(.system(size:25))
-                                            .padding(.top,5)
-                                            .padding(.trailing,6)
-                                            .foregroundColor(.white)
-                                    }
-                                }
-                                Spacer()
-                            }.frame(width:370, height: 70).background(CustomColor.cardColor)
-                                .cornerRadius(20)
+                            }
                             Divider()
+                            HStack(spacing: 5) {
+                                ZStack {
+                                    RoundedRectangle(cornerRadius: 5)
+                                        .frame(width: 20)
+                                        .foregroundColor(.black)
+                                        .opacity(0.8)
+                                    Text("Stat")
+                          
+                                        .foregroundColor(.white)
+                                }
+                                Divider()
+                                Button {
+                                    filter = "alive"
+                                    viewModel.initialize(filter: filter)
+
+                                } label: {
+                                    ZStack {
+                                        RoundedRectangle(cornerRadius: 5)
+                                            .frame(width: 80, height: 30, alignment: .center)
+                                            .foregroundColor(Color.black)
+                                        Text("Alive")
+                                            .foregroundColor(Color.white)
+
+                                    }
+                                }
+                                Divider()
+                                Button {
+                                    filter = "dead"
+                                    viewModel.initialize(filter: filter)
+
+                                } label: {
+                                    ZStack {
+                                        RoundedRectangle(cornerRadius: 5)
+                                            .frame(width: 80, height: 30, alignment: .center)
+                                            .foregroundColor(Color.black)
+                                        Text("Dead")
+                                            .foregroundColor(Color.white)
+                                    }
+                                }
+                                Divider()
+                                Button {
+                                    filter = "unknown"
+                                    viewModel.initialize(filter: filter)
+
+                                } label: {
+                                    ZStack {
+                                        RoundedRectangle(cornerRadius: 5)
+                                            .frame(width: 80, height: 30, alignment: .center)
+                                            .foregroundColor(Color.black)
+                                        Text("Unknown").font(.system(size: 15))
+                                            .foregroundColor(Color.white)
+                                    }
+                                }
+                            }
+                        }
+                        ForEach(viewModel.rickAndMortyResponse){ results in
+                            VStack {
+                                CharacterCardView(character: results)
+                               
+                                    .cornerRadius(8)
+                                    .padding(.horizontal)
+                                Divider()
+                            }
+                        } .onAppear() {
+                            viewModel.initialize(filter: filter)
                         }
                     }
-                }
+                
             }.toolbar {
                 ToolbarItem(placement: .principal) {
                     Text("Rick&Morty App!").foregroundColor(Color.white).fontWeight(.bold)

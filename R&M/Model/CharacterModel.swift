@@ -20,7 +20,7 @@ struct Character: Codable, Identifiable {
     let species: Species?
     let type: String?
     let gender: Gender?
-    let origin, location: Location?
+    let origin, location: Location2?
     let image: String?
     let episode: [String]?
     let url: String?
@@ -54,4 +54,9 @@ enum Gender: String, Codable {
     case genderless = "Genderless"
     case male = "Male"
     case unknown = "unknown"
+}
+
+struct Location2: Codable {
+    let name: String?
+    let url: String?
 }

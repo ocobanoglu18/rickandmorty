@@ -8,52 +8,6 @@
 import Foundation
 
 
-struct InfoModel: Codable {
-    let count: Int?
-    let pages: Int?
-    let next: String?
-    let prev: String?
-}
-
-
-enum endpointType {
-    case character
-    case episode
-    case location
-
-    var apiTypeString: String {
-        switch self {
-        case .character:
-            return "character"
-        case .episode:
-            return "episode"
-        case .location:
-            return "location"
-        }
-    }
-}
-
-enum RickandMortyError: Error {
-
-    case decodingError
-    case dataError
-    case urlError
-    case responseError
-
-    var localizedDescription: String {
-
-        switch self {
-        case .decodingError:
-            return "Decode edilemedi"
-        case .dataError:
-            return "Data error"
-        case .urlError:
-            return "URL error"
-        case .responseError:
-            return "Response error"
-        }
-    }
-}
 
 class Service: ObservableObject {
 
@@ -163,5 +117,53 @@ class Service: ObservableObject {
             }
         }
         task.resume()
+    }
+}
+
+
+struct InfoModel: Codable {
+    let count: Int?
+    let pages: Int?
+    let next: String?
+    let prev: String?
+}
+
+
+enum endpointType {
+    case character
+    case episode
+    case location
+
+    var apiTypeString: String {
+        switch self {
+        case .character:
+            return "character"
+        case .episode:
+            return "episode"
+        case .location:
+            return "location"
+        }
+    }
+}
+
+enum RickandMortyError: Error {
+
+    case decodingError
+    case dataError
+    case urlError
+    case responseError
+
+    var localizedDescription: String {
+
+        switch self {
+        case .decodingError:
+            return "Decode edilemedi"
+        case .dataError:
+            return "Data error"
+        case .urlError:
+            return "URL error"
+        case .responseError:
+            return "Response error"
+        }
     }
 }
