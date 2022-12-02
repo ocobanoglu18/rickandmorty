@@ -86,7 +86,7 @@ struct EpisodeDetailView: View {
                                 }
                                 RoundedRectangle(cornerRadius: 4)
                                     .opacity(0.7)
-                                    .frame(width: 150, height: 50)
+                                    .frame(width: 150, height: 50).background(CustomColor.cardColor)
                                 Text(character.name ?? "")
                                     .foregroundColor(Color.white)
                                     .padding(10)

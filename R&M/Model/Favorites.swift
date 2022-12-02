@@ -3,38 +3,31 @@
 //  R&M
 //
 //  Created by Adnan Cobanoglu on 7.11.2022.
-//
 
-//import Foundation
-//
-//
+
+import Foundation
+
+
 //class Favorites: ObservableObject {
-//    // the actual resorts the user has favorited
-//    private var resorts: Set<Int>
 //
-//    // the key we're using to read/write in UserDefaults
+//    private var favorites: Set<Character>
+//
 //    private let saveKey = "Favorites"
 //
 //    init() {
-//        // load our saved data
-//
-//        // still here? Use an empty array
 //        resorts = []
 //    }
 //
-//    // returns true if our set contains this resort
 //    func contains(_ resort: Results) -> Bool {
 //        resorts.contains(resort.id)
 //    }
 //
-//    // adds the resort to our set, updates all views, and saves the change
 //    func add(_ resort: Results) {
 //        objectWillChange.send()
 //        resorts.insert(resort.id)
 //        save()
 //    }
 //
-//    // removes the resort from our set, updates all views, and saves the change
 //    func remove(_ resort: Results) {
 //        objectWillChange.send()
 //        resorts.remove(resort.id)
@@ -42,6 +35,6 @@
 //    }
 //
 //    func save() {
-//        // write out our data
+//
 //    }
 //}

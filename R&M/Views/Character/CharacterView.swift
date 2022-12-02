@@ -15,9 +15,10 @@ struct CharacterView: View {
     
     @State private var searchTextChar = ""
     @State private var searchText = ""
-    @State var filter = ""
+    @State var filter = "Main"
     var episode: EpisodeResult?
   
+    
     @State var searchList=[Results]()
   
     var body: some View {

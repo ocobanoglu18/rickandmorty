@@ -17,7 +17,7 @@ struct EpisodeView: View {
         VStack{
         NavigationView {
             ScrollView {
-                LazyVStack(spacing: 10) {
+                VStack(spacing:2) {
                     ForEach(viewModelEpisode.episodeResponse) { episode in
                         VStack {
                             NavigationLink(destination: EpisodeDetailView(episode: episode)) {
