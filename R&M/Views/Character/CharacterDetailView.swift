@@ -81,8 +81,8 @@ struct CharacterDetailView: View {
                         ScrollView(.horizontal) {
                             HStack(spacing: 5) {
                                 ForEach((selectedCharacter?.episode)!, id:\.self) { episode in
-                                    Button() {
-                                 
+                                    NavigationLink {
+
                                     } label: {
                                         ZStack {
                                             RoundedRectangle(cornerRadius: 10)
