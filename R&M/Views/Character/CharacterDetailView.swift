@@ -13,6 +13,7 @@ struct CharacterDetailView: View {
     @State var results: Results?
     @State var location:Location?
     var selectedCharacter: Character?
+    var episodes: EpisodeResult?
     
     
     var body: some View {
@@ -81,7 +82,7 @@ struct CharacterDetailView: View {
                             HStack(spacing: 5) {
                                 ForEach((selectedCharacter?.episode)!, id:\.self) { episode in
                                     Button() {
-
+                                 
                                     } label: {
                                         ZStack {
                                             RoundedRectangle(cornerRadius: 10)

@@ -78,7 +78,7 @@ struct EpisodeDetailView: View {
                                         .cornerRadius(8)
                                 } placeholder: {
                                     RoundedRectangle(cornerRadius: 4)
-                                        .fill(Color.red)
+                                        .fill(Color.black)
                                         .frame(width: 150, height: 150, alignment: .center)
                                         .overlay(ProgressView())
                                         .cornerRadius(8)
@@ -99,7 +99,7 @@ struct EpisodeDetailView: View {
                 }
             }
             Spacer()
-        }.frame(width: 400,height: 800).background(Color.purple).cornerRadius(20)
+        }.frame(width: 400,height: 800).background(CustomColor.cardColor).cornerRadius(20)
         Spacer()
         Spacer()
     }
