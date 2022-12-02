@@ -15,38 +15,38 @@ struct EpisodeCardView: View {
                 HStack {
                     ZStack {
                         RoundedRectangle(cornerRadius: 10)
-                            .frame(width: 121, height: 121, alignment: .center)
-                            .foregroundColor(Color.yellow)
-                        Text(episode?.id?.toString() ?? "1")
+                            .frame(width: 100, height: 100, alignment: .center)
                             .foregroundColor(Color.black)
+                        Text(episode?.id?.toString() ?? "1")
+                            .foregroundColor(Color.white)
                             .fontWeight(.bold)
                             .font(.system(size: 60))
                     }
-                }
+                }.padding(.leading)
                 HStack {
                     VStack(spacing: 10) {
                         HStack {
                             Text(episode?.name ?? "Pilot")
                                 .font(.body)
-                                .foregroundColor(.black)
+                                .foregroundColor(.white)
                             Spacer()
                         }
                         HStack {
                             Text(episode?.airDate ?? "December 2, 2013")
                                 .font(.body)
-                                .foregroundColor(.black)
+                                .foregroundColor(.white)
                             Spacer()
                         }
                         HStack {
                             Text(episode?.episode ?? "S01E01")
                                 .font(.body)
-                                .foregroundColor(.black)
+                                .foregroundColor(.white)
                             Spacer()
                         }
                     }
                     Spacer()
                 }.padding()
-            }
+            }.background(CustomColor.cardColor)
         }
     }
 }
