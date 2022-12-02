@@ -16,9 +16,8 @@ struct EpisodeDetailView: View {
 
     
     var body: some View {
-        Spacer()
         VStack{
-            
+            Spacer()
             HStack {
                 Spacer()
                 Image(systemName: "text.quote").fontWeight(.bold).padding(.leading)
@@ -58,16 +57,18 @@ struct EpisodeDetailView: View {
                 Spacer()
                 
             }
+            Spacer()
             HStack {
-                Text("Characters in This Episode").padding(.leading)
-            }
+                Text("Characters in This Episode").padding(.leading).font(.system(size: 20)).fontWeight(.bold)
+                Spacer()
+            }.padding(.top)
 
             ScrollView(showsIndicators: false) {
                 LazyVGrid(columns: [GridItem(.adaptive(minimum: 150))], spacing: 10) {
                     ForEach((charactersThisEpisode.chars)) { character in
-                        Button {
-                       
-                            selectedCharacter = character
+                        NavigationLink {
+                         
+                            CharacterDetailView(selectedCharacter:character)
                         } label: {
                             ZStack(alignment: .bottom) {
                                 AsyncImage(url: URL(string: character.image ?? "")) { image in
@@ -99,9 +100,8 @@ struct EpisodeDetailView: View {
                 }
             }
             Spacer()
-        }.frame(width: 400,height: 800).background(CustomColor.cardColor).cornerRadius(20)
-        Spacer()
-        Spacer()
+        }.background(CustomColor.cardColor)
+
     }
 }
 

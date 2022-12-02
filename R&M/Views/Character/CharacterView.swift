@@ -37,11 +37,7 @@ struct CharacterView: View {
                         }
                         Spacer()
                             .padding(.bottom)
-                        
-//                        HStack {
-//                            Text("Favorite Episodes").padding(.leading).foregroundColor(Color.white).fontWeight(.bold)
-//                            Spacer()
-//                        }
+
                         HStack {
                             
                             Text("Characters").padding(.leading).foregroundColor(Color.white).fontWeight(.bold)
@@ -62,21 +58,6 @@ struct CharacterView: View {
                             }
                             Divider()
                             HStack {
-                                Button {
-                                    filter = "alive"
-                                    viewModel.initialize(filter: filter)
-
-                                } label: {
-                                    ZStack {
-                                        RoundedRectangle(cornerRadius: 5)
-                                            .frame(width: 80, height: 30, alignment: .center)
-                                            .foregroundColor(Color.black)
-                                        Text("Alive")
-                                            .foregroundColor(Color.white)
-
-                                    }
-                                }
-                                Divider()
                                 Button {
                                     filter = "dead"
                                     viewModel.initialize(filter: filter)
@@ -115,7 +96,7 @@ struct CharacterView: View {
                                 Divider()
                             }
                         } .onAppear() {
-                            viewModel.initialize(filter: "")
+                            viewModel.initialize(filter: filter)
                         }
                     }
                 
