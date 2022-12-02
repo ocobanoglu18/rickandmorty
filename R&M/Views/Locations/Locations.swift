@@ -29,28 +29,31 @@ struct Locations: View {
                             .searchable(text: $searchText, prompt: "Look for something")
                             
                         ForEach(data.results){ results in
-                                
                                 HStack {
-                                 
                                         VStack{
-                                            HStack{
-                                                Text(results.name).foregroundColor(Color.white)    .font(.system(size:18)).bold()
-                                                    .lineLimit(4)
-                                                Image(systemName: "mappin.square.fill").foregroundColor(Color.white)
+                                                HStack{
+                                                    Text(results.name).foregroundColor(Color.white)    .font(.system(size:18)).bold()
+                                                        .lineLimit(4)
+                                                    Image(systemName: "mappin.square.fill").foregroundColor(Color.white)
+                                                }
+                                          
+                                                Text(results.type).foregroundColor(Color.white)    .font(.system(size:14)).bold()
                                             }
-                                            Text(results.type).foregroundColor(Color.white)    .font(.system(size:14)).bold()
+                                             
+                                        
+                                        Spacer()
+                                        HStack{
+                                            VStack{
+                                                Text("Dimesion").foregroundColor(Color.white).font(.system(size: 12))
+                                                Text(results.dimension).foregroundColor(Color.white).font(.system(size: 13)).lineLimit(1)
+                                            }
+                                            Image(systemName: "location.viewfinder").foregroundColor(Color.white).padding(.trailing,15)
                                         }
-                                         
-                                    
-                                    Spacer()
-                                    HStack{
-                                    
-                                        Image(systemName: "arrow.right").foregroundColor(Color.white).padding(.trailing,15)
-                                    }
 
-                                }.frame(width:340, height: 40).background(Color.black).opacity(0.8)
-                                    .padding(.top)
+                                    }.frame(width:340, height: 40).background(Color.black).opacity(0.8)
+                                        .padding(.top)
                                     .padding(.bottom)
+                            
                                Spacer()
                                 
                                 Divider()

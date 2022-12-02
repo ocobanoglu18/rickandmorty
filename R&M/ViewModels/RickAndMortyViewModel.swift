@@ -41,8 +41,6 @@ class RickAndMortyViewModel : ObservableObject {
 //            }
 //            .store(in: &cancellable)
 //    }
-    
-
 
     func initialize(filter: String) {
         fetchContent(filter: filter)
