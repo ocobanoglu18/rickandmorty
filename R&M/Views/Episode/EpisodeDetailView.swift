@@ -12,28 +12,32 @@ struct EpisodeDetailView: View {
     @State var liked = false
     var episode: EpisodeResult?
     @ObservedObject var charactersThisEpisode = EpisodeDetailViewModel()
+    @ObservedObject var episodeViewModel=EpisodeViewViewModel()
     @State var selectedCharacter: Character?
+    @EnvironmentObject var favorites: Favorites
+    var episode2: EpisodeResult?
 
     
     var body: some View {
         VStack{
             Spacer()
             HStack {
-                Spacer()
                 Image(systemName: "text.quote").fontWeight(.bold).padding(.leading)
                 Text(episode?.name ?? "").fontWeight(.bold).font(.system(size: 30))
                 Spacer()
-                Button {
-                   
-                    liked.toggle()
-                } label: {
-                    if(liked==false){
-                        Image(systemName: "heart").resizable().foregroundColor(    Color.white).frame(width: 30,height: 30).padding(.trailing)
-                    }else if(liked==true){
-                        Image(systemName: "heart.fill").resizable().foregroundColor(    Color.white).frame(width: 30,height: 30).padding(.trailing)
+                Button(favorites.contains(episode!) ? "Remove from favorites" : "Add to Favorites")
+                {
+                    
+                    if favorites.contains(episode!){
+                        favorites.remove(episode!)
+                    } else{
+                        favorites.add(episode!)
                     }
-                }.frame(width: 60,height: 60)
-           
+                }.tint(.indigo)
+                    .buttonStyle(.borderedProminent)
+                    .padding()
+            
+              
             }
 
             HStack {
@@ -95,14 +99,15 @@ struct EpisodeDetailView: View {
 
                     }
                 }
-                    .onAppear() {
-                    charactersThisEpisode.initialize(episode: episode!)
-                }
             }
             Spacer()
         }.background(CustomColor.cardColor)
+            .onAppear() {
+                            charactersThisEpisode.initialize(episode: episode!)
+                        }
 
     }
+
 }
 
 struct EpisodeDetailView_Previews: PreviewProvider {

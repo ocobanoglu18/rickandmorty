@@ -11,7 +11,7 @@ struct CharacterView: View {
     
     @StateObject var viewModel=RickAndMortyViewModel()
     @StateObject var viewModelEpisode:EpisodeViewViewModel=EpisodeViewViewModel()
-
+   
     
     @State private var searchTextChar = ""
     @State private var searchText = ""
@@ -38,7 +38,9 @@ struct CharacterView: View {
                         }
                         Spacer()
                             .padding(.bottom)
+                        VStack{
 
+                        }
                         HStack {
                             
                             Text("Characters").padding(.leading).foregroundColor(Color.white).fontWeight(.bold)
