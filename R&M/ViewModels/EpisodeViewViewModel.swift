@@ -7,6 +7,7 @@
 
 import Foundation
 import Combine
+import SwiftUI
 
 
 
@@ -14,7 +15,7 @@ class EpisodeViewViewModel: ObservableObject {
     let service = Service.shared
     
     @Published var episodeResponse = [EpisodeResult]()
-    
+
     func initialize() {
         fetchContent()
     }

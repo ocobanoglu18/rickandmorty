@@ -12,6 +12,8 @@ struct EpisodeView: View {
     let columns = [
         GridItem(.adaptive(minimum: 150))
     ]
+    
+    @StateObject var favorites = Favorites()
 
     var body: some View {
         VStack{
@@ -25,6 +27,10 @@ struct EpisodeView: View {
                                     .background(Color.white)
                                     .cornerRadius(8)
                                     .padding(.horizontal)
+                                if favorites.contains(episode){
+                                    Spacer()
+                                    Image(systemName: "heart.fill").foregroundColor(Color.red)
+                                }
                             }
                             Divider()
                         }
@@ -35,7 +41,7 @@ struct EpisodeView: View {
                 viewModelEpisode.initialize()
             }
                 .navigationTitle("Episodes")
-        }
+        }.environmentObject(favorites)
       
                 .toolbar {
                     ToolbarItem(placement: .principal) {

@@ -13,6 +13,8 @@ class Service: ObservableObject {
 
     static let baseURL = "https://rickandmortyapi.com/api/"
     static let shared = Service()
+    @Published var list : [EpisodeResult] = []
+    var userLikedListing: [EpisodeResult] = []
 
     //MARK: - Charachter Request
     func fetchCharactersRequest(filter: String, endpointType: endpointType, completion: @escaping (Result<CharacterModel<InfoModel>, RickandMortyError>) -> ()) {
@@ -118,6 +120,9 @@ class Service: ObservableObject {
         }
         task.resume()
     }
+    
+ 
+    
 }
 
 

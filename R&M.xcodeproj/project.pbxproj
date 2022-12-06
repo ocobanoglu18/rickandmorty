@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0907FF2D2912813800F07562 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0907FF2C2912813800F07562 /* Location.swift */; };
+		091B0EDE293F7E720033B14F /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = 091B0EDD293F7E720033B14F /* Database.swift */; };
 		095420A72936253A005F3CDE /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = 095420A62936253A005F3CDE /* Package.swift */; };
 		095420A929362558005F3CDE /* Empty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 095420A829362558005F3CDE /* Empty.swift */; };
 		096FEF5C291CC6F200B73F1E /* LocationViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 096FEF5B291CC6F200B73F1E /* LocationViewViewModel.swift */; };
@@ -39,6 +40,7 @@
 
 /* Begin PBXFileReference section */
 		0907FF2C2912813800F07562 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		091B0EDD293F7E720033B14F /* Database.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Database.swift; sourceTree = "<group>"; };
 		095420A62936253A005F3CDE /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
 		095420A829362558005F3CDE /* Empty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Empty.swift; sourceTree = "<group>"; };
 		096FEF5B291CC6F200B73F1E /* LocationViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewViewModel.swift; sourceTree = "<group>"; };
@@ -199,6 +201,7 @@
 				09D2D96029125A1900BB18C1 /* RickAndMortyService.swift */,
 				09CCD4332930B1EF00E91B09 /* Service.swift */,
 				09CCD43E2934D21100E91B09 /* Extension.swift */,
+				091B0EDD293F7E720033B14F /* Database.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -320,6 +323,7 @@
 				09AFED562918FD1D0011FE94 /* Favorites.swift in Sources */,
 				09CCD4362930B3A300E91B09 /* CharacterModel.swift in Sources */,
 				09D2D94929124ADC00BB18C1 /* R_MApp.swift in Sources */,
+				091B0EDE293F7E720033B14F /* Database.swift in Sources */,
 				09D2D95D2912581E00BB18C1 /* RickAndMortyViewModel.swift in Sources */,
 				09CCD43A2930B6BC00E91B09 /* EpisodeModel.swift in Sources */,
 			);
