@@ -27,6 +27,8 @@ struct LocaleKeys{
         case Removefromfavorites="Removefromfavorites"
         case AddtoFavorites="AddtoFavorites"
         case CharactersinThisEpisode="CharactersinThisEpisode"
+        case ResidentinThisLocations="ResidentinThisLocations"
+        case Dimension="Dimension"
     }
 }
 
