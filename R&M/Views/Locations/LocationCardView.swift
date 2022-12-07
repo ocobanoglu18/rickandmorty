@@ -22,7 +22,7 @@ struct LocationCardView: View {
                     Spacer()
                     HStack{
                         VStack{
-                            Text("Dimesion").foregroundColor(Color.white).font(.system(size: 12))
+                            Text(LocaleKeys.Auth.Dimension.rawValue.locale().foregroundColor(Color.white).font(.system(size: 12))
                             Text((location?.dimension)!).foregroundColor(Color.white).font(.system(size: 13)).lineLimit(1)
                         }
                         Image(systemName: "location.viewfinder").foregroundColor(Color.white).padding(.trailing,15)

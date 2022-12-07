@@ -35,7 +35,7 @@ struct LocationDetailView: View {
                 }
                 Divider()
                     .foregroundColor(Color.black)
-                Text("Resident in This Locations")
+                Text(LocaleKeys.Auth.ResidentinThisLocations.rawValue.locale())
                     .font(.title)
                     .fontWeight(.bold)
                     .padding(10)
