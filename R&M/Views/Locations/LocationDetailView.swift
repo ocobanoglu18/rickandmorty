@@ -41,8 +41,8 @@ struct LocationDetailView: View {
                     .padding(10)
                 LazyVGrid(columns: [GridItem(.adaptive(minimum: 150))], spacing: 10) {
                     ForEach((residentThisLocation.chars)) { character in
-                        Button {
-                            selectedCharacter = character
+                        NavigationLink {
+                            CharacterDetailView(selectedCharacter:character)
                         } label: {
                             ZStack(alignment: .bottom) {
                                 AsyncImage(url: URL(string: character.image ?? "")) { image in
