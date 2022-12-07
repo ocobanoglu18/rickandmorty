@@ -11,5 +11,6 @@ Rick&amp;Morty App
 </p>
 
 <p>
-<img width="372" alt="Ekran Resmi 2022-12-02 13 33 19" src="https://user-images.githubusercontent.com/72749463/205273399-860eab4b-7d05-408d-a211-a1ea4eebd6df.png">
+<img width="374" alt="Ekran Resmi 2022-12-07 14 37 38" src="https://user-images.githubusercontent.com/72749463/206169854-7753701e-6cdc-4202-b47b-3ce5cd59badb.png">
+<img width="366" alt="Ekran Resmi 2022-12-07 14 37 46" src="https://user-images.githubusercontent.com/72749463/206169867-4e576ef1-f2bf-42e5-95ab-8c1cea381d7d.png">
 </p>
