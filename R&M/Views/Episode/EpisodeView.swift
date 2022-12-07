@@ -45,7 +45,7 @@ struct EpisodeView: View {
       
                 .toolbar {
                     ToolbarItem(placement: .principal) {
-                        Text("Episodes").foregroundColor(Color.white).fontWeight(.bold)
+                        Text(LocaleKeys.Auth.Episodes.rawValue.locale()).foregroundColor(Color.white).fontWeight(.bold)
                         
                     }
                 }

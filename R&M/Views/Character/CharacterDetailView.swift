@@ -34,42 +34,42 @@ struct CharacterDetailView: View {
                 VStack{
                     HStack {
                         
-                        Text("Character Name")
+                        Text(LocaleKeys.Auth.CharacterName.rawValue.locale())
                         Spacer()
                         Text(selectedCharacter?.name ?? "").fontWeight(.bold)
                         Spacer()
                     }.padding(.leading).padding(.top)
                     HStack {
                         
-                        Text("Character Gender")
+                        Text(LocaleKeys.Auth.CharacterGender.rawValue.locale())
                         Spacer()
                         Text(selectedCharacter?.gender?.rawValue ?? "").fontWeight(.bold)
                         Spacer()
                     }.padding(.leading).padding(.top)
                     HStack {
                         
-                        Text("Character Type")
+                        Text(LocaleKeys.Auth.CharacterType.rawValue.locale())
                         Spacer()
                         Text(selectedCharacter?.type ?? "").fontWeight(.bold)
                         Spacer()
                     }.padding(.leading).padding(.top)
                     HStack {
                         
-                        Text("Character Created Date")
+                        Text(LocaleKeys.Auth.CharacterCreatedDate.rawValue.locale())
                         Spacer()
                         Text(selectedCharacter?.created ?? "").fontWeight(.bold)
                         Spacer()
                     }.padding(.leading).padding(.top)
                     HStack {
                         
-                        Text("Character Species")
+                        Text(LocaleKeys.Auth.CharacterSpecies.rawValue.locale())
                         Spacer()
                         Text(selectedCharacter?.species?.rawValue ?? "").fontWeight(.bold)
                         Spacer()
                     }.padding(.leading).padding(.top)
                     HStack {
                         
-                        Text("Character Status")
+                        Text(LocaleKeys.Auth.CharacterStatus.rawValue.locale())
                         Spacer()
                         Text(selectedCharacter?.status?.rawValue ?? "").fontWeight(.bold)
                         Spacer()
@@ -106,7 +106,7 @@ struct CharacterDetailView: View {
                         ToolbarItem(placement: .principal) {
                             
                             
-                            Text("Detail View").foregroundColor(Color.white).fontWeight(.bold)
+                            Text(LocaleKeys.Auth.DetailView.rawValue.locale()).foregroundColor(Color.white).fontWeight(.bold)
                             
                         }
                 }
