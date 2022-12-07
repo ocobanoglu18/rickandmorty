@@ -40,7 +40,7 @@ struct EpisodeView: View {
                 .onAppear() {
                 viewModelEpisode.initialize()
             }
-                .navigationTitle("Episodes")
+                .navigationTitle(LocaleKeys.Auth.Episodes.rawValue.locale())
         }.environmentObject(favorites)
       
                 .toolbar {
