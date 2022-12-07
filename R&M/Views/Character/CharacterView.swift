@@ -27,7 +27,7 @@ struct CharacterView: View {
                     VStack {
                         HStack {
                             
-                            Text("Images from episodes").padding(.leading).foregroundColor(Color.white).fontWeight(.bold)
+                            Text(LocaleKeys.Auth.Imagesfromepisodes.rawValue.locale()).padding(.leading).foregroundColor(Color.white).fontWeight(.bold)
                             Spacer()
                         }
                         HStack{
@@ -43,7 +43,7 @@ struct CharacterView: View {
                         }
                         HStack {
                             
-                            Text("Characters").padding(.leading).foregroundColor(Color.white).fontWeight(.bold)
+                            Text(LocaleKeys.Auth.Characters.rawValue.locale()).padding(.leading).foregroundColor(Color.white).fontWeight(.bold)
                             Spacer()
                         }
                         HStack(spacing: 10) {
@@ -55,7 +55,7 @@ struct CharacterView: View {
                                     RoundedRectangle(cornerRadius: 5)
                                         .frame(width: 60, height: 30, alignment: .center)
                                         .foregroundColor(.black)
-                                    Text("Main")
+                                    Text(LocaleKeys.Auth.Main.rawValue.locale())
                                         .foregroundColor(Color.white)
                                 }
                             }
@@ -70,7 +70,7 @@ struct CharacterView: View {
                                         RoundedRectangle(cornerRadius: 5)
                                             .frame(width: 80, height: 30, alignment: .center)
                                             .foregroundColor(Color.black)
-                                        Text("Dead")
+                                        Text(LocaleKeys.Auth.Dead.rawValue.locale())
                                             .foregroundColor(Color.white)
                                     }
                                 }
@@ -84,7 +84,7 @@ struct CharacterView: View {
                                         RoundedRectangle(cornerRadius: 5)
                                             .frame(width: 80, height: 30, alignment: .center)
                                             .foregroundColor(Color.black)
-                                        Text("Unknown").font(.system(size: 15))
+                                        Text(LocaleKeys.Auth.Unknowm.rawValue.locale()).font(.system(size: 15))
                                             .foregroundColor(Color.white)
                                     }
                                 }
@@ -105,7 +105,7 @@ struct CharacterView: View {
                 
             }.toolbar {
                 ToolbarItem(placement: .principal) {
-                    Text("Rick&Morty App!").foregroundColor(Color.white).fontWeight(.bold)
+                    Text(LocaleKeys.Auth.RickMortyAppTitle.rawValue.locale()).foregroundColor(Color.white).fontWeight(.bold)
                 }
             }
             

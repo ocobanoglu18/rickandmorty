@@ -25,7 +25,7 @@ struct EpisodeDetailView: View {
                 Image(systemName: "text.quote").fontWeight(.bold).padding(.leading)
                 Text(episode?.name ?? "").fontWeight(.bold).font(.system(size: 30))
                 Spacer()
-                Button(favorites.contains(episode!) ? "Remove from favorites" : "Add to Favorites")
+                Button(favorites.contains(episode!) ? LocaleKeys.Auth.Removefromfavorites.rawValue.locale() : LocaleKeys.Auth.AddtoFavorites.rawValue.locale())
                 {
                     
                     if favorites.contains(episode!){
@@ -63,7 +63,7 @@ struct EpisodeDetailView: View {
             }
             Spacer()
             HStack {
-                Text("Characters in This Episode").padding(.leading).font(.system(size: 20)).fontWeight(.bold)
+                Text(LocaleKeys.Auth.CharactersinThisEpisode.rawValue.locale()).padding(.leading).font(.system(size: 20)).fontWeight(.bold)
                 Spacer()
             }.padding(.top)
 
