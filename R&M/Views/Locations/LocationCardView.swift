@@ -11,13 +11,14 @@ struct LocationCardView: View {
     var location: LocationResult?
 
     var body: some View {
-        VStack {
+        HStack{
 
-                HStack {
-                            Text((location?.name)!)
-                                .fontWeight(.bold)
-                                .font(.system(size: 20))
-                                .foregroundColor(.white)
+                    VStack{
+                        Text((location?.name)!)
+                            .fontWeight(.bold)
+                            .font(.system(size: 15))
+                            .foregroundColor(.white)
+                    }
                     Spacer()
                     HStack{
                         VStack{
@@ -26,9 +27,9 @@ struct LocationCardView: View {
                         }
                         Image(systemName: "location.viewfinder").foregroundColor(Color.white).padding(.trailing,15)
                     }
-                    
-                }.padding(.trailing, 20).background(Color.black)
-            Spacer()
+        
+          
+        
             
         }.background(Color.black)
     }
