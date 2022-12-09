@@ -7,6 +7,8 @@
 
 import SwiftUI
 
+
+
 struct Locations: View {
     @StateObject private var viewModelLocation:LocationViewViewModel=LocationViewViewModel()
     @State private var searchText = ""

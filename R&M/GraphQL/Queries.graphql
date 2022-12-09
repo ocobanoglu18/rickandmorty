@@ -1,0 +1,51 @@
+query CharacterList{
+  characters {
+    info{
+      count
+      next
+      pages
+      prev
+      __typename
+    }
+    results{
+      id
+      name
+      status
+      species
+      type
+      gender
+      image
+      created
+      __typename
+    }
+  }
+}
+
+query EpisodeList{
+  episodes{
+    results{
+      name
+      air_date
+      episode
+      characters{
+        name
+      }
+    }
+  }
+}
+
+query LocationList{
+  locations{
+    results{
+      id
+      name
+      dimension
+      type
+      residents{
+          name
+        gender
+      }
+      created
+    }
+  }
+}

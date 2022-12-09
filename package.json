@@ -1,0 +1,5 @@
+{
+  "devDependencies": {
+    "apollo": "^2.11.1"
+  }
+}
