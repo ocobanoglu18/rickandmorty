@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+
 struct CharacterView: View {
     
     @StateObject var viewModel=RickAndMortyViewModel()
@@ -26,7 +27,6 @@ struct CharacterView: View {
             ScrollView(showsIndicators: false){
                     VStack {
                         HStack {
-                            
                             Text(LocaleKeys.Auth.Imagesfromepisodes.rawValue.locale()).padding(.leading).foregroundColor(Color.white).fontWeight(.bold)
                             Spacer()
                         }
@@ -34,7 +34,6 @@ struct CharacterView: View {
                             Image("Logo").frame(width: 110,height: 110).cornerRadius(10).padding(.bottom)
                             Image("Logo1").frame(width: 110,height: 110).cornerRadius(10).padding(.bottom)
                             Image("Logo2").frame(width: 110,height: 110).cornerRadius(10).padding(.bottom)
-                            
                         }
                         Spacer()
                             .padding(.bottom)
