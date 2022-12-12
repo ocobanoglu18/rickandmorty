@@ -44,6 +44,7 @@
 		09F5E5E92918E70C000A1BF6 /* CharacterDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09F5E5E82918E70C000A1BF6 /* CharacterDetailView.swift */; };
 		09FC5D342914F6E8008D1A4C /* EpisodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09FC5D332914F6E7008D1A4C /* EpisodeView.swift */; };
 		09FC5D362914F79F008D1A4C /* Episode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09FC5D352914F79F008D1A4C /* Episode.swift */; };
+		09FDB24F2947182E00B5615A /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09FDB24E2947182E00B5615A /* Network.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -85,6 +86,7 @@
 		09F5E5E82918E70C000A1BF6 /* CharacterDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailView.swift; sourceTree = "<group>"; };
 		09FC5D332914F6E7008D1A4C /* EpisodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeView.swift; sourceTree = "<group>"; };
 		09FC5D352914F79F008D1A4C /* Episode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Episode.swift; sourceTree = "<group>"; };
+		09FDB24E2947182E00B5615A /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -267,6 +269,7 @@
 				09CCD4332930B1EF00E91B09 /* Service.swift */,
 				09CCD43E2934D21100E91B09 /* Extension.swift */,
 				091B0EDD293F7E720033B14F /* Database.swift */,
+				09FDB24E2947182E00B5615A /* Network.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -395,6 +398,7 @@
 				09FC5D342914F6E8008D1A4C /* EpisodeView.swift in Sources */,
 				09CCD4412934D74800E91B09 /* EpisodeDetailViewModel.swift in Sources */,
 				09AFED5829190F200011FE94 /* EpisodeDetailView.swift in Sources */,
+				09FDB24F2947182E00B5615A /* Network.swift in Sources */,
 				096FEF5C291CC6F200B73F1E /* LocationViewViewModel.swift in Sources */,
 				09F5E5E92918E70C000A1BF6 /* CharacterDetailView.swift in Sources */,
 				09CCD4432934D85F00E91B09 /* EpisodeCardView.swift in Sources */,
