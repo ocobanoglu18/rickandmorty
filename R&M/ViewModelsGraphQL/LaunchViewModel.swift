@@ -8,6 +8,10 @@
 import Foundation
 import Apollo
 final class LaunchViewModel: ObservableObject {
+    
+    init() {
+            fetch()
+    }
 
     func fetch() {
         Network.shared.apollo.fetch(query: CharacterListQuery()) { result in // Change the query name to your query name
