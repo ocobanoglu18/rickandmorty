@@ -22,6 +22,8 @@
 		096FEF5C291CC6F200B73F1E /* LocationViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 096FEF5B291CC6F200B73F1E /* LocationViewViewModel.swift */; };
 		096FEF5E291CC70800B73F1E /* EpisodeViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 096FEF5D291CC70800B73F1E /* EpisodeViewViewModel.swift */; };
 		0997DB2229486E9E00162EF7 /* LaunchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0997DB2129486E9E00162EF7 /* LaunchViewModel.swift */; };
+		0997DB242948B3B100162EF7 /* ContentViewGraphQL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0997DB232948B3B100162EF7 /* ContentViewGraphQL.swift */; };
+		0997DB272948B59C00162EF7 /* LaunchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0997DB262948B59C00162EF7 /* LaunchModel.swift */; };
 		09AFED562918FD1D0011FE94 /* Favorites.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09AFED552918FD1D0011FE94 /* Favorites.swift */; };
 		09AFED5829190F200011FE94 /* EpisodeDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09AFED5729190F200011FE94 /* EpisodeDetailView.swift */; };
 		09CCD4342930B1EF00E91B09 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09CCD4332930B1EF00E91B09 /* Service.swift */; };
@@ -64,6 +66,8 @@
 		096FEF5B291CC6F200B73F1E /* LocationViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewViewModel.swift; sourceTree = "<group>"; };
 		096FEF5D291CC70800B73F1E /* EpisodeViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeViewViewModel.swift; sourceTree = "<group>"; };
 		0997DB2129486E9E00162EF7 /* LaunchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchViewModel.swift; sourceTree = "<group>"; };
+		0997DB232948B3B100162EF7 /* ContentViewGraphQL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewGraphQL.swift; sourceTree = "<group>"; };
+		0997DB262948B59C00162EF7 /* LaunchModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchModel.swift; sourceTree = "<group>"; };
 		09AFED552918FD1D0011FE94 /* Favorites.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Favorites.swift; sourceTree = "<group>"; };
 		09AFED5729190F200011FE94 /* EpisodeDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeDetailView.swift; sourceTree = "<group>"; };
 		09CCD4332930B1EF00E91B09 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
@@ -174,6 +178,14 @@
 			path = ViewModelsGraphQL;
 			sourceTree = "<group>";
 		};
+		0997DB252948B57E00162EF7 /* ModelGraphQL */ = {
+			isa = PBXGroup;
+			children = (
+				0997DB262948B59C00162EF7 /* LaunchModel.swift */,
+			);
+			path = ModelGraphQL;
+			sourceTree = "<group>";
+		};
 		09CCD4442934DB3400E91B09 /* Character */ = {
 			isa = PBXGroup;
 			children = (
@@ -216,11 +228,13 @@
 				09184535294322F200B7F4C6 /* schema.json */,
 				09D2D94829124ADC00BB18C1 /* R_MApp.swift */,
 				09D2D94A29124ADC00BB18C1 /* ContentView.swift */,
+				0997DB232948B3B100162EF7 /* ContentViewGraphQL.swift */,
 				0918453329431C0600B7F4C6 /* GraphQL */,
+				0997DB252948B57E00162EF7 /* ModelGraphQL */,
+				0997DB2029486E6D00162EF7 /* ViewModelsGraphQL */,
 				091B0F1829407E030033B14F /* Local */,
 				09FC5D3829150CE3008D1A4C /* Model */,
 				09FC5D3929150CF7008D1A4C /* ViewModels */,
-				0997DB2029486E6D00162EF7 /* ViewModelsGraphQL */,
 				09FC5D3729150CD4008D1A4C /* Views */,
 				09FC5D3A29150D08008D1A4C /* Services */,
 				095420A529362515005F3CDE /* BuildTools */,
@@ -406,6 +420,7 @@
 			files = (
 				09D2D9572912558B00BB18C1 /* CharacterView.swift in Sources */,
 				095420A72936253A005F3CDE /* Package.swift in Sources */,
+				0997DB242948B3B100162EF7 /* ContentViewGraphQL.swift in Sources */,
 				09FC5D342914F6E8008D1A4C /* EpisodeView.swift in Sources */,
 				09CCD4412934D74800E91B09 /* EpisodeDetailViewModel.swift in Sources */,
 				09AFED5829190F200011FE94 /* EpisodeDetailView.swift in Sources */,
@@ -415,6 +430,7 @@
 				09F5E5E92918E70C000A1BF6 /* CharacterDetailView.swift in Sources */,
 				09CCD4432934D85F00E91B09 /* EpisodeCardView.swift in Sources */,
 				091B0F202940AA890033B14F /* LocationDetailView.swift in Sources */,
+				0997DB272948B59C00162EF7 /* LaunchModel.swift in Sources */,
 				096FEF5E291CC70800B73F1E /* EpisodeViewViewModel.swift in Sources */,
 				095420A929362558005F3CDE /* Empty.swift in Sources */,
 				09D2D94B29124ADC00BB18C1 /* ContentView.swift in Sources */,
