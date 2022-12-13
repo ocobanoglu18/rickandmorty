@@ -10,38 +10,33 @@ import Foundation
 
 
 class Service: ObservableObject {
-
+    
     static let baseURL = "https://rickandmortyapi.com/api/"
     static let shared = Service()
     @Published var list : [EpisodeResult] = []
     var userLikedListing: [EpisodeResult] = []
-
+    
     //MARK: - Charachter Request
     func fetchCharactersRequest(filter: String, endpointType: endpointType, completion: @escaping (Result<CharacterModel<InfoModel>, RickandMortyError>) -> ()) {
         let url = Service.baseURL + endpointType.apiTypeString + "/?status=" + filter
-
         guard let requestURL = URL(string: url) else {
             completion(.failure(.urlError))
             return
         }
-
         let task = URLSession.shared.dataTask(with: requestURL) { data, resp, err in
-
+            
             guard let httpResponse = resp as? HTTPURLResponse, 200..<300 ~= httpResponse.statusCode else {
                 completion(.failure(.responseError))
                 return
             }
-
             guard let data = data else {
                 completion(.failure(.dataError))
                 return
             }
-
             do {
                 let response = try JSONDecoder().decode(CharacterModel<InfoModel>.self, from: data)
                 DispatchQueue.main.async {
                     completion(.success(response))
-
                 }
             }
             catch {
@@ -50,33 +45,27 @@ class Service: ObservableObject {
         }
         task.resume()
     }
-
+    
     //MARK: - Only Char Request
     func fetchOnlyCharRequest(url: String, completion: @escaping (Result<Character, RickandMortyError>) -> ()) {
         let url = url
-
         guard let requestURL = URL(string: url) else {
             completion(.failure(.urlError))
             return
         }
-
         let task = URLSession.shared.dataTask(with: requestURL) { data, resp, err in
-
             guard let httpResponse = resp as? HTTPURLResponse, 200..<300 ~= httpResponse.statusCode else {
                 completion(.failure(.responseError))
                 return
             }
-
             guard let data = data else {
                 completion(.failure(.dataError))
                 return
             }
-
             do {
                 let response = try JSONDecoder().decode(Character.self, from: data)
                 DispatchQueue.main.async {
                     completion(.success(response))
-
                 }
             }
             catch {
@@ -85,29 +74,29 @@ class Service: ObservableObject {
         }
         task.resume()
     }
-
+    
     //MARK: - Request Episode or Location
     func fetchRequest<T:Decodable>(endpointType: endpointType, completion: @escaping (Result<T, RickandMortyError>) -> ()) {
-
+        
         let url = Service.baseURL + endpointType.apiTypeString
-
+        
         guard let requestURL = URL(string: url) else {
             completion(.failure(.urlError))
             return
         }
-
+        
         let task = URLSession.shared.dataTask(with: requestURL) { data, resp, err in
-
+            
             guard let httpResponse = resp as? HTTPURLResponse, 200..<300 ~= httpResponse.statusCode else {
                 completion(.failure(.responseError))
                 return
             }
-
+            
             guard let data = data else {
                 completion(.failure(.dataError))
                 return
             }
-
+            
             do {
                 let response = try JSONDecoder().decode(T.self, from: data)
                 DispatchQueue.main.async {
@@ -120,8 +109,6 @@ class Service: ObservableObject {
         }
         task.resume()
     }
-    
- 
     
 }
 
@@ -138,7 +125,7 @@ enum endpointType {
     case character
     case episode
     case location
-
+    
     var apiTypeString: String {
         switch self {
         case .character:
@@ -152,14 +139,14 @@ enum endpointType {
 }
 
 enum RickandMortyError: Error {
-
+    
     case decodingError
     case dataError
     case urlError
     case responseError
-
+    
     var localizedDescription: String {
-
+        
         switch self {
         case .decodingError:
             return "Decode edilemedi"

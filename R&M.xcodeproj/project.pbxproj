@@ -21,6 +21,7 @@
 		095420A929362558005F3CDE /* Empty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 095420A829362558005F3CDE /* Empty.swift */; };
 		096FEF5C291CC6F200B73F1E /* LocationViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 096FEF5B291CC6F200B73F1E /* LocationViewViewModel.swift */; };
 		096FEF5E291CC70800B73F1E /* EpisodeViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 096FEF5D291CC70800B73F1E /* EpisodeViewViewModel.swift */; };
+		0997DB2229486E9E00162EF7 /* LaunchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0997DB2129486E9E00162EF7 /* LaunchViewModel.swift */; };
 		09AFED562918FD1D0011FE94 /* Favorites.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09AFED552918FD1D0011FE94 /* Favorites.swift */; };
 		09AFED5829190F200011FE94 /* EpisodeDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09AFED5729190F200011FE94 /* EpisodeDetailView.swift */; };
 		09CCD4342930B1EF00E91B09 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09CCD4332930B1EF00E91B09 /* Service.swift */; };
@@ -62,6 +63,7 @@
 		095420A829362558005F3CDE /* Empty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Empty.swift; sourceTree = "<group>"; };
 		096FEF5B291CC6F200B73F1E /* LocationViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewViewModel.swift; sourceTree = "<group>"; };
 		096FEF5D291CC70800B73F1E /* EpisodeViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeViewViewModel.swift; sourceTree = "<group>"; };
+		0997DB2129486E9E00162EF7 /* LaunchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchViewModel.swift; sourceTree = "<group>"; };
 		09AFED552918FD1D0011FE94 /* Favorites.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Favorites.swift; sourceTree = "<group>"; };
 		09AFED5729190F200011FE94 /* EpisodeDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeDetailView.swift; sourceTree = "<group>"; };
 		09CCD4332930B1EF00E91B09 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
@@ -164,6 +166,14 @@
 			path = Locations;
 			sourceTree = "<group>";
 		};
+		0997DB2029486E6D00162EF7 /* ViewModelsGraphQL */ = {
+			isa = PBXGroup;
+			children = (
+				0997DB2129486E9E00162EF7 /* LaunchViewModel.swift */,
+			);
+			path = ViewModelsGraphQL;
+			sourceTree = "<group>";
+		};
 		09CCD4442934DB3400E91B09 /* Character */ = {
 			isa = PBXGroup;
 			children = (
@@ -210,6 +220,7 @@
 				091B0F1829407E030033B14F /* Local */,
 				09FC5D3829150CE3008D1A4C /* Model */,
 				09FC5D3929150CF7008D1A4C /* ViewModels */,
+				0997DB2029486E6D00162EF7 /* ViewModelsGraphQL */,
 				09FC5D3729150CD4008D1A4C /* Views */,
 				09FC5D3A29150D08008D1A4C /* Services */,
 				095420A529362515005F3CDE /* BuildTools */,
@@ -400,6 +411,7 @@
 				09AFED5829190F200011FE94 /* EpisodeDetailView.swift in Sources */,
 				09FDB24F2947182E00B5615A /* Network.swift in Sources */,
 				096FEF5C291CC6F200B73F1E /* LocationViewViewModel.swift in Sources */,
+				0997DB2229486E9E00162EF7 /* LaunchViewModel.swift in Sources */,
 				09F5E5E92918E70C000A1BF6 /* CharacterDetailView.swift in Sources */,
 				09CCD4432934D85F00E91B09 /* EpisodeCardView.swift in Sources */,
 				091B0F202940AA890033B14F /* LocationDetailView.swift in Sources */,
