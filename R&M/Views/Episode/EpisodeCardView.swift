@@ -43,7 +43,6 @@ struct EpisodeCardView: View {
                                 .foregroundColor(.white)
                             Spacer()
                         }
-               
                     }
                     Spacer()
                 }.padding()

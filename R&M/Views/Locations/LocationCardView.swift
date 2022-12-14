@@ -11,26 +11,22 @@ struct LocationCardView: View {
     var location: LocationResult?
 
     var body: some View {
-        HStack{
+        HStack {
+            VStack {
+                Text((location?.name)!)
+                    .fontWeight(.bold)
+                    .font(.system(size: 15))
+                    .foregroundColor(.white)
+            }
+            Spacer()
+            HStack {
+                VStack {
+                    Text(LocaleKeys.Auth.Dimension.rawValue.locale()).foregroundColor(Color.white).font(.system(size: 12))
+                    Text((location?.dimension)!).foregroundColor(Color.white).font(.system(size: 13)).lineLimit(1)
+                }
+                Image(systemName: "location.viewfinder").foregroundColor(Color.white).padding(.trailing, 15)
+            }
 
-                    VStack{
-                        Text((location?.name)!)
-                            .fontWeight(.bold)
-                            .font(.system(size: 15))
-                            .foregroundColor(.white)
-                    }
-                    Spacer()
-                    HStack{
-                        VStack{
-                            Text(LocaleKeys.Auth.Dimension.rawValue.locale()).foregroundColor(Color.white).font(.system(size: 12))
-                            Text((location?.dimension)!).foregroundColor(Color.white).font(.system(size: 13)).lineLimit(1)
-                        }
-                        Image(systemName: "location.viewfinder").foregroundColor(Color.white).padding(.trailing,15)
-                    }
-        
-          
-        
-            
         }.background(Color.black)
     }
 }

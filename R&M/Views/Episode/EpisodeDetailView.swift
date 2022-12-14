@@ -8,36 +8,32 @@
 import SwiftUI
 
 struct EpisodeDetailView: View {
-    @ObservedObject var viewModel:RickAndMortyViewModel=RickAndMortyViewModel()
+    @ObservedObject var viewModel: RickAndMortyViewModel = .init()
     @State var liked = false
     var episode: EpisodeResult?
     @ObservedObject var charactersThisEpisode = EpisodeDetailViewModel()
-    @ObservedObject var episodeViewModel=EpisodeViewViewModel()
+    @ObservedObject var episodeViewModel = EpisodeViewViewModel()
     @State var selectedCharacter: Character?
     @EnvironmentObject var favorites: Favorites
     var episode2: EpisodeResult?
 
-    
     var body: some View {
-        VStack{
+        VStack {
             Spacer()
             HStack {
                 Image(systemName: "text.quote").fontWeight(.bold).padding(.leading)
                 Text(episode?.name ?? "").fontWeight(.bold).font(.system(size: 30))
                 Spacer()
                 Button(favorites.contains(episode!) ? LocaleKeys.Auth.Removefromfavorites.rawValue.locale() : LocaleKeys.Auth.AddtoFavorites.rawValue.locale())
-                {
-                    
-                    if favorites.contains(episode!){
-                        favorites.remove(episode!)
-                    } else{
-                        favorites.add(episode!)
-                    }
-                }.tint(.indigo)
+                    {
+                        if favorites.contains(episode!) {
+                            favorites.remove(episode!)
+                        } else {
+                            favorites.add(episode!)
+                        }
+                    }.tint(.indigo)
                     .buttonStyle(.borderedProminent)
                     .padding()
-            
-              
             }
 
             HStack {
@@ -59,7 +55,6 @@ struct EpisodeDetailView: View {
                 Spacer()
                 Text(episode?.url ?? "")
                 Spacer()
-                
             }
             Spacer()
             HStack {
@@ -69,10 +64,9 @@ struct EpisodeDetailView: View {
 
             ScrollView(showsIndicators: false) {
                 LazyVGrid(columns: [GridItem(.adaptive(minimum: 150))], spacing: 10) {
-                    ForEach((charactersThisEpisode.chars)) { character in
+                    ForEach(charactersThisEpisode.chars) { character in
                         NavigationLink {
-                         
-                            CharacterDetailView(selectedCharacter:character)
+                            CharacterDetailView(selectedCharacter: character)
                         } label: {
                             ZStack(alignment: .bottom) {
                                 AsyncImage(url: URL(string: character.image ?? "")) { image in
@@ -96,18 +90,15 @@ struct EpisodeDetailView: View {
                                     .padding(10)
                             }
                         }
-
                     }
                 }
             }
             Spacer()
         }.background(CustomColor.cardColor)
-            .onAppear() {
-                            charactersThisEpisode.initialize(episode: episode!)
-                        }
-
+            .onAppear {
+                charactersThisEpisode.initialize(episode: episode!)
+            }
     }
-
 }
 
 struct EpisodeDetailView_Previews: PreviewProvider {
