@@ -31,7 +31,6 @@ struct LocationDetailView: View {
                         .font(.system(size: 15))
                         .padding(.leading, 3)
                     Spacer()
-
                 }
                 Divider()
                     .foregroundColor(Color.black)
@@ -40,9 +39,9 @@ struct LocationDetailView: View {
                     .fontWeight(.bold)
                     .padding(10)
                 LazyVGrid(columns: [GridItem(.adaptive(minimum: 150))], spacing: 10) {
-                    ForEach((residentThisLocation.chars)) { character in
+                    ForEach(residentThisLocation.chars) { character in
                         NavigationLink {
-                            CharacterDetailView(selectedCharacter:character)
+                            CharacterDetailView(selectedCharacter: character)
                         } label: {
                             ZStack(alignment: .bottom) {
                                 AsyncImage(url: URL(string: character.image ?? "")) { image in
@@ -71,15 +70,13 @@ struct LocationDetailView: View {
                     }
                 }
 
-                    .onAppear() {
-                        residentThisLocation.initialize(location: location!)
+                .onAppear {
+                    residentThisLocation.initialize(location: location!)
                 }
 
             }.padding(10)
                 .navigationTitle(location?.name ?? "Earth (C-137)")
         }
-
-
     }
 }
 
