@@ -10,11 +10,11 @@ import SwiftUI
 @main
 struct R_MApp: App {
     @StateObject var launchViewModel = LaunchViewModel()
-    
+
     var body: some Scene {
         WindowGroup {
 //            ContentView().preferredColorScheme(.dark)
-            ContentViewGraphQL().preferredColorScheme(.dark).environmentObject(launchViewModel) 
+            ContentViewGraphQL().preferredColorScheme(.dark).environmentObject(launchViewModel)
         }
     }
 }

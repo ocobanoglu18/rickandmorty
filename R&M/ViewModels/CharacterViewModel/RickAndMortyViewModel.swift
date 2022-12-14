@@ -5,21 +5,19 @@
 //  Created by Adnan Cobanoglu on 2.11.2022.
 //
 
-import Foundation
 import Combine
+import Foundation
 
-
-class RickAndMortyViewModel : ObservableObject {
-
-    @Published var charactersState:CharacterViewModelState=CharacterViewModelState.initial
-    let rickAndMoortyDataService:RickAndMortyDataServices=RickAndMortyDataServices()
+class RickAndMortyViewModel: ObservableObject {
+    @Published var charactersState: CharacterViewModelState = .initial
+    let rickAndMoortyDataService: RickAndMortyDataServices = .init()
     var cancellable = Set<AnyCancellable>()
     @Published var charList = [Results]()
     @Published var location = [Location]()
-    
+
     let service = Service.shared
     @Published var rickAndMortyResponse = [Character]()
-    
+
 //    init() {
 //        getAllCharacters()
 //    }
@@ -57,5 +55,4 @@ class RickAndMortyViewModel : ObservableObject {
             }
         }
     }
-
 }
