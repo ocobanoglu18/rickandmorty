@@ -49,3 +49,30 @@ query LocationList{
     }
   }
 }
+
+fragment CharacterFull on Character {
+    id, name, image, status, species, type, gender
+    episode {
+        id, name, air_date
+    }
+    location {
+        id, name
+    }
+    origin {
+        id, name
+    }
+}
+
+fragment LocationDetail on Location {
+    id, name, type, dimension,
+    residents {
+        id, name, image
+    }
+}
+
+fragment EpisodeDetail on Episode {
+    id, name, created, air_date, episode
+    characters {
+        id, name, image
+    }
+}
