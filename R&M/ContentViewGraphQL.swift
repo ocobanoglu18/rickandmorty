@@ -9,7 +9,9 @@ import SwiftUI
 
 struct ContentViewGraphQL: View {
     var body: some View {
-        Text("Hello, World!")
+        TabView{
+            
+        }
     }
 }
 
