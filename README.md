@@ -1,5 +1,5 @@
 # rickandmorty
-Rick&amp;Morty App
+#  Rick&amp;Morty App
 <p>This application was created using rickandmorty's public api.</p>
 </p>The language of the application is swift and swiftUI.</p>
 </p>In this application, data extraction and data manipulation events are done both with rest api and using graphql.</p>
