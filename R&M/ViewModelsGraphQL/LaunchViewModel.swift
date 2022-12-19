@@ -13,10 +13,10 @@ final class LaunchViewModel: ObservableObject {
     
     @Published public var characters: [CharacterSmall]?
     
-//    public var placeholders = Array(repeating: CharacterSmall(id: GraphQLID(0),
-//                                                              name: nil,
-//                                                              image: nil,
-//                                                              episode: nil), count: 10)
+    public var placeholders = Array(repeating: CharacterSmall(id: GraphQLID(0),
+                                                              name: nil,
+                                                              image: nil,
+                                                              episode: [nil]), count: 10)
     
     public var currentPage = 1 {
         didSet {
