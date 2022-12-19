@@ -1,4 +1,3 @@
-# rickandmorty
 #  Rick&amp;Morty App
 <p>This application was created using rickandmorty's public api.</p>
 </p>The language of the application is swift and swiftUI.</p>
