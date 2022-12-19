@@ -8,13 +8,14 @@
 import SwiftUI
 
 struct GraphCharacterView: View {
+    
     @StateObject var data = LaunchViewModel()
+    
     var body: some View {
         List{
-            ForEach(data.characters!) { results in
+            ForEach(data.characters ?? data.placeholders, id: \.id) { results in
                 HStack{
                     Text(results.id!)
-                    Text(results.name!)
                 }
             }
         }
