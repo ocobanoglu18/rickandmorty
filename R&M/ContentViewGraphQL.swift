@@ -8,9 +8,13 @@
 import SwiftUI
 
 struct ContentViewGraphQL: View {
+    
     var body: some View {
         TabView{
-            
+            GraphCharacterView()
+                .tabItem {
+                    Image(systemName: "house.fill")
+                }
         }
     }
 }
