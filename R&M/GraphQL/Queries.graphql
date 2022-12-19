@@ -1,53 +1,79 @@
-query CharacterList{
-  characters {
-    info{
-      count
-      next
-      pages
-      prev
-      __typename
+query GetCharacters($page: Int) {
+    characters(page: $page) {
+        info {
+            pages, count
+        }
+        results {
+            ...CharacterSmall
+        }
     }
-    results{
-      id
-      name
-      status
-      species
-      type
-      gender
-      image
-      created
-      __typename
-    }
-  }
 }
 
-query EpisodeList{
-  episodes{
-    results{
-      name
-      air_date
-      episode
-      characters{
-        name
-      }
+query GetCharacter($id: ID!){
+    character(id: $id) {
+        ...CharacterFull
     }
-  }
 }
 
-query LocationList{
-  locations{
-    results{
-      id
-      name
-      dimension
-      type
-      residents{
-          name
-        gender
-      }
-      created
+query GetEpisodes($page: Int){
+    episodes(page: $page) {
+        info {
+            count, pages
+        }
+        results {
+            ...EpisodeDetail
+        }
     }
-  }
+}
+
+query GetEpisode($id: ID!) {
+    episode(id: $id) {
+        ...EpisodeDetail
+    }
+}
+
+query GetLocations($page: Int) {
+    locations(page: $page) {
+        info {
+            count, pages
+        }
+        results {
+            ...LocationDetail
+        }
+    }
+}
+
+query GetLocation($id: ID!) {
+    location(id: $id) {
+        ...LocationDetail
+    }
+}
+
+query GetSearch($name: String!) {
+    characters(page: 1, filter: { name: $name }) {
+        info {
+            count
+        }
+        results {
+            ...CharacterSmall
+        }
+    }
+    locations(page: 1, filter: { name: $name }) {
+        info {
+            count
+        }
+        results {
+            ...LocationDetail
+        }
+    }
+    episodes(page: 1, filter: { name: $name }) {
+        info {
+            count
+        }
+        results {
+            ...EpisodeDetail
+        }
+    }
 }
 
 fragment CharacterFull on Character {
@@ -59,6 +85,13 @@ fragment CharacterFull on Character {
         id, name
     }
     origin {
+        id, name
+    }
+}
+
+fragment CharacterSmall on Character {
+    id, name, image,
+    episode {
         id, name
     }
 }
@@ -76,3 +109,6 @@ fragment EpisodeDetail on Episode {
         id, name, image
     }
 }
+
+
+

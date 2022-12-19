@@ -13,8 +13,9 @@ struct R_MApp: App {
 
     var body: some Scene {
         WindowGroup {
-//            ContentView().preferredColorScheme(.dark)
-            ContentViewGraphQL().preferredColorScheme(.dark).environmentObject(launchViewModel)
+//          ContentView().preferredColorScheme(.dark)
+            ContentViewGraphQL().preferredColorScheme(.dark)
+                .environmentObject(launchViewModel)
         }
     }
 }

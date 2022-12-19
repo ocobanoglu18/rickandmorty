@@ -7,6 +7,8 @@
 
 import Foundation
 
+
+
 struct CharacterModel<T:Codable>: Codable {
     let info: T?
     let results: [Character]?
