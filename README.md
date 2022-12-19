@@ -1,8 +1,8 @@
 # rickandmorty
 Rick&amp;Morty App
-This application was created using rickandmorty's public api.
-The language of the application is swift and swiftUI.
-In this application, data extraction and data manipulation events are done both with rest api and using graphql.
+<p>This application was created using rickandmorty's public api.</p>
+</p>The language of the application is swift and swiftUI.</p>
+</p>In this application, data extraction and data manipulation events are done both with rest api and using graphql.</p>
 
 <p>
 <img width="370" alt="Ekran Resmi 2022-12-02 13 32 26" src="https://user-images.githubusercontent.com/72749463/205273331-0098f6bf-28bc-45d3-9649-7c2b479215e3.png">
