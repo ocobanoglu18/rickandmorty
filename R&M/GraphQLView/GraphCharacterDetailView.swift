@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct GraphCharacterDetailView: View {
+    
     let character: CharacterSmall
     
     var body: some View {

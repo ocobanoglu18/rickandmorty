@@ -13,11 +13,14 @@ struct GraphCharacterView: View {
     
     var body: some View {
         List{
-            ForEach(data.characters ?? data.placeholders, id: \.id) { results in
-                HStack{
-                    Text(results.id!)
-                }
+            ForEach(data.characters ?? data.placeholders, id: \.id) { character in
+                NavigationLink(
+                    destination: GraphCharacterViewDetailDetailView(id: character.id!),
+                    label: {
+                        GraphCharacterDetailView(character: character)
+                    })
             }
+ 
         }
         .onAppear {
             data.fetchCharacters()
