@@ -40,28 +40,28 @@ struct GraphCharacterViewDetailDetailView: View {
                 }
             }
             
-//            infoSection
+            infoSection
 //            locationSection
 //
-//            if let episodes = character?.episode.compactMap{ $0 } {
-//                Section(header: Text("Episodes")) {
-//                    ForEach(episodes, id: \.id) { episode in
-//                        NavigationLink(
-////                            destination: EpisodeDetailView(id: episode.id!),
-//                            label: {
-//                                HStack {
-//                                    Text(episode.name!)
-//                                    Spacer()
-//                                    Text(episode.airDate!)
-//                                        .foregroundColor(.gray)
-//                                        .font(.footnote)
-//                                }
-//                            })
-//                            .navigationBarItems(trailing: Button("💥", action: {
-//                            }))
-//                    }
-//                }
-//            }
+            if let episodes = character?.episode.compactMap{ $0 } {
+                Section(header: Text("Episodes")) {
+                    ForEach(episodes, id: \.id) { episode in
+                        NavigationLink(
+                            destination: GraphEpisodeViewDetailView(id: episode.id!),
+                            label: {
+                                HStack {
+                                    Text(episode.name!)
+                                    Spacer()
+                                    Text(episode.airDate!)
+                                        .foregroundColor(.gray)
+                                        .font(.footnote)
+                                }
+                            })
+                            .navigationBarItems(trailing: Button("💥", action: {
+                            }))
+                    }
+                }
+            }
             
         }
         .listStyle(GroupedListStyle())
