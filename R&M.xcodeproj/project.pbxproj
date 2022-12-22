@@ -21,6 +21,10 @@
 		0932DBE2294B436100BF91AD /* SİngleQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0932DBE1294B436100BF91AD /* SİngleQuery.swift */; };
 		093F4F7D29526E4B0078E183 /* GraphCharacterViewDetailDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 093F4F7C29526E4B0078E183 /* GraphCharacterViewDetailDetailView.swift */; };
 		093F4F7F29526ED40078E183 /* InfoRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 093F4F7E29526ED40078E183 /* InfoRowView.swift */; };
+		093F4F852953195D0078E183 /* GraphEpisodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 093F4F842953195D0078E183 /* GraphEpisodeView.swift */; };
+		093F4F87295319870078E183 /* GraphEpisodeDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 093F4F86295319870078E183 /* GraphEpisodeDetailView.swift */; };
+		093F4F89295319A00078E183 /* GraphEpisodeViewDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 093F4F88295319A00078E183 /* GraphEpisodeViewDetailView.swift */; };
+		093F4F8B295319B50078E183 /* GraphEpisodeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 093F4F8A295319B50078E183 /* GraphEpisodeViewModel.swift */; };
 		095420A72936253A005F3CDE /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = 095420A62936253A005F3CDE /* Package.swift */; };
 		095420A929362558005F3CDE /* Empty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 095420A829362558005F3CDE /* Empty.swift */; };
 		0959B9F52950B5FD00A6078F /* GraphCharacterDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0959B9F42950B5FD00A6078F /* GraphCharacterDetailView.swift */; };
@@ -70,6 +74,10 @@
 		0932DBE1294B436100BF91AD /* SİngleQuery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SİngleQuery.swift"; sourceTree = "<group>"; };
 		093F4F7C29526E4B0078E183 /* GraphCharacterViewDetailDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphCharacterViewDetailDetailView.swift; sourceTree = "<group>"; };
 		093F4F7E29526ED40078E183 /* InfoRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoRowView.swift; sourceTree = "<group>"; };
+		093F4F842953195D0078E183 /* GraphEpisodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphEpisodeView.swift; sourceTree = "<group>"; };
+		093F4F86295319870078E183 /* GraphEpisodeDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphEpisodeDetailView.swift; sourceTree = "<group>"; };
+		093F4F88295319A00078E183 /* GraphEpisodeViewDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphEpisodeViewDetailView.swift; sourceTree = "<group>"; };
+		093F4F8A295319B50078E183 /* GraphEpisodeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphEpisodeViewModel.swift; sourceTree = "<group>"; };
 		095420A62936253A005F3CDE /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
 		095420A829362558005F3CDE /* Empty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Empty.swift; sourceTree = "<group>"; };
 		0959B9F42950B5FD00A6078F /* GraphCharacterDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphCharacterDetailView.swift; sourceTree = "<group>"; };
@@ -166,12 +174,31 @@
 		0932DBDE294B395500BF91AD /* GraphQLView */ = {
 			isa = PBXGroup;
 			children = (
+				093F4F7E29526ED40078E183 /* InfoRowView.swift */,
+				093F4F80295318E10078E183 /* GraphQLCharacterView */,
+				093F4F81295318FB0078E183 /* GraphQLEpisodeView */,
+			);
+			path = GraphQLView;
+			sourceTree = "<group>";
+		};
+		093F4F80295318E10078E183 /* GraphQLCharacterView */ = {
+			isa = PBXGroup;
+			children = (
 				0932DBDF294B397900BF91AD /* GraphCharacterView.swift */,
 				0959B9F42950B5FD00A6078F /* GraphCharacterDetailView.swift */,
 				093F4F7C29526E4B0078E183 /* GraphCharacterViewDetailDetailView.swift */,
-				093F4F7E29526ED40078E183 /* InfoRowView.swift */,
 			);
-			path = GraphQLView;
+			path = GraphQLCharacterView;
+			sourceTree = "<group>";
+		};
+		093F4F81295318FB0078E183 /* GraphQLEpisodeView */ = {
+			isa = PBXGroup;
+			children = (
+				093F4F842953195D0078E183 /* GraphEpisodeView.swift */,
+				093F4F86295319870078E183 /* GraphEpisodeDetailView.swift */,
+				093F4F88295319A00078E183 /* GraphEpisodeViewDetailView.swift */,
+			);
+			path = GraphQLEpisodeView;
 			sourceTree = "<group>";
 		};
 		095420A529362515005F3CDE /* BuildTools */ = {
@@ -197,6 +224,7 @@
 			isa = PBXGroup;
 			children = (
 				0997DB2129486E9E00162EF7 /* LaunchViewModel.swift */,
+				093F4F8A295319B50078E183 /* GraphEpisodeViewModel.swift */,
 			);
 			path = ViewModelsGraphQL;
 			sourceTree = "<group>";
@@ -454,6 +482,7 @@
 				0997DB2229486E9E00162EF7 /* LaunchViewModel.swift in Sources */,
 				09F5E5E92918E70C000A1BF6 /* CharacterDetailView.swift in Sources */,
 				0932DBE0294B397900BF91AD /* GraphCharacterView.swift in Sources */,
+				093F4F852953195D0078E183 /* GraphEpisodeView.swift in Sources */,
 				09CCD4432934D85F00E91B09 /* EpisodeCardView.swift in Sources */,
 				0932DBE2294B436100BF91AD /* SİngleQuery.swift in Sources */,
 				091B0F202940AA890033B14F /* LocationDetailView.swift in Sources */,
@@ -471,12 +500,15 @@
 				09CCD4342930B1EF00E91B09 /* Service.swift in Sources */,
 				09D2D96129125A1900BB18C1 /* RickAndMortyService.swift in Sources */,
 				09CCD43F2934D21100E91B09 /* Extension.swift in Sources */,
+				093F4F87295319870078E183 /* GraphEpisodeDetailView.swift in Sources */,
 				09D2D95F2912584900BB18C1 /* RickAndMortyDataServices.swift in Sources */,
 				09AFED562918FD1D0011FE94 /* Favorites.swift in Sources */,
 				09CCD4362930B3A300E91B09 /* CharacterModel.swift in Sources */,
 				091B0F222940AAC80033B14F /* LocationDetailViewModel.swift in Sources */,
+				093F4F8B295319B50078E183 /* GraphEpisodeViewModel.swift in Sources */,
 				093F4F7F29526ED40078E183 /* InfoRowView.swift in Sources */,
 				09D2D94929124ADC00BB18C1 /* R_MApp.swift in Sources */,
+				093F4F89295319A00078E183 /* GraphEpisodeViewDetailView.swift in Sources */,
 				091B0EDE293F7E720033B14F /* Database.swift in Sources */,
 				09D2D95D2912581E00BB18C1 /* RickAndMortyViewModel.swift in Sources */,
 				09CCD43A2930B6BC00E91B09 /* EpisodeModel.swift in Sources */,
