@@ -10,7 +10,7 @@ import Apollo
 
 struct GraphCharacterViewDetailDetailView: View {
     @StateObject private var query: SingleQuery<GetCharacterQuery>
-    
+
     var character: CharacterFull? {
         query.data?.character?.fragments.characterFull
     }
@@ -19,18 +19,29 @@ struct GraphCharacterViewDetailDetailView: View {
         _query = StateObject(wrappedValue: SingleQuery(query: GetCharacterQuery(id: id)))
     }
     
+
+    
+    
+    
+    
     var body: some View {
         List {
-            Section(header: Text("Mugshot")) {
+            Section(header: Text("Picture")) {
                 HStack {
                     Spacer()
                     if let image = character?.image,
                        let url = URL(string: image) {
-                        Image(systemName:"\(url)")
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .frame(width: 150, height: 150)
-                            .cornerRadius(25)
+                        AsyncImage(
+                            url: url,
+                            content: { image in
+                                image.resizable()
+                                    .aspectRatio(contentMode: .fit)
+                                    .cornerRadius(20)
+                            },
+                            placeholder: {
+                                ProgressView()
+                            }
+                        )
                     } else {
                         RoundedRectangle(cornerRadius: 25)
                             .frame(width: 150, height: 150)
@@ -57,8 +68,6 @@ struct GraphCharacterViewDetailDetailView: View {
                                         .font(.footnote)
                                 }
                             })
-                            .navigationBarItems(trailing: Button("💥", action: {
-                            }))
                     }
                 }
             }
@@ -107,3 +116,10 @@ struct GraphCharacterViewDetailDetailView: View {
 //    }
 }
 
+struct GraphCharacterViewDetailDetailView_Previews: PreviewProvider {
+    static var previews: some View {
+        NavigationView {
+            GraphCharacterViewDetailDetailView(id: GraphQLID(1))
+        }
+    }
+}

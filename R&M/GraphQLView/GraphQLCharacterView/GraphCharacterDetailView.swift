@@ -15,24 +15,30 @@ struct GraphCharacterDetailView: View {
         HStack {
             if let image = character.image,
                let url = URL(string: image) {
-                Image(systemName:"\(url)")
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(width: 50, height: 50)
-                    .cornerRadius(25)
+                AsyncImage(
+                    url: url,
+                    content: { image in
+                        image.resizable()
+                             .aspectRatio(contentMode: .fit)
+                             .frame(maxWidth: 300, maxHeight: 100)
+                    },
+                    placeholder: {
+                        ProgressView()
+                    }
+                )
+                    .frame(width: 80, height: 80)
+                    .cornerRadius(10)
             } else {
                 RoundedRectangle(cornerRadius: 25)
                     .frame(width: 50, height: 50)
-                    .foregroundColor(.gray)
+                    .foregroundColor(CustomColor.cardColor)
             }
             VStack(alignment: .leading) {
                 Text(character.name ?? "Loading...")
-                    .font(.title3)
-                    .foregroundColor(.accentColor)
+                    .foregroundColor(.white)
                     .redacted(reason: character.name == nil ? .placeholder : [])
                 Text("\(character.episode.count ?? 0) episode(s)")
-                    .font(.footnote)
-                    .foregroundColor(.gray)
+                    .foregroundColor(.white)
                     .redacted(reason: character.episode == nil ? .placeholder : [])
             }
         }

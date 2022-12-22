@@ -14,11 +14,11 @@ struct InfoRowView: View {
     
     var body: some View {
         HStack {
-            Label(label, systemImage: icon)
+            Label(label, systemImage: icon).foregroundColor(Color.white)
             Spacer()
             Text(value)
-                .foregroundColor(.accentColor)
-                .fontWeight(.semibold)
+                .foregroundColor(.white)
+                .fontWeight(.bold)
         }
     }
 }
