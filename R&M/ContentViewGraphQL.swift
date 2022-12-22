@@ -15,6 +15,11 @@ struct ContentViewGraphQL: View {
                 .tabItem {
                     Image(systemName: "house.fill")
                 }
+            
+            GraphEpisodeView()
+                .tabItem {
+                    Image(systemName: "list.triangle")
+                }
         }
     }
 }

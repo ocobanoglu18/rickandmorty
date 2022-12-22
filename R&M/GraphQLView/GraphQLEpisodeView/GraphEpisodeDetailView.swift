@@ -14,15 +14,17 @@ struct GraphEpisodeDetailView: View {
         HStack(alignment: .center) {
             VStack(alignment: .leading) {
                 Text(episode.name ?? "Loading...")
-                    .foregroundColor(.accentColor)
+                    .foregroundColor(.white)
+                    .fontWeight(.bold)
                 Text(episode.episode ?? "Loading...")
                     .font(.footnote)
             }
             Spacer()
             Text(episode.airDate ?? "Loading...")
-                .foregroundColor(.gray)
+                .foregroundColor(.white)
                 .font(.footnote)
         }.redacted(reason: episode.name == nil ? .placeholder : [])
+
     }
 }
 

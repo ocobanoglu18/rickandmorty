@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct GraphEpisodeView: View {
-    @StateObject private var data = GraphEpisodeViewModel()
+    @StateObject var data = GraphEpisodeViewModel()
     
     var body: some View {
         NavigationView {
