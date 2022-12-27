@@ -5,8 +5,8 @@
 //  Created by Adnan Cobanoglu on 21.12.2022.
 //
 
-import SwiftUI
 import Apollo
+import SwiftUI
 
 struct GraphCharacterViewDetailDetailView: View {
     @StateObject private var query: SingleQuery<GetCharacterQuery>
@@ -19,18 +19,14 @@ struct GraphCharacterViewDetailDetailView: View {
         _query = StateObject(wrappedValue: SingleQuery(query: GetCharacterQuery(id: id)))
     }
     
-
-    
-    
-    
-    
     var body: some View {
         List {
             Section(header: Text("Picture")) {
                 HStack {
                     Spacer()
                     if let image = character?.image,
-                       let url = URL(string: image) {
+                       let url = URL(string: image)
+                    {
                         AsyncImage(
                             url: url,
                             content: { image in
@@ -54,7 +50,7 @@ struct GraphCharacterViewDetailDetailView: View {
             infoSection
 //            locationSection
 //
-            if let episodes = character?.episode.compactMap{ $0 } {
+            if let episodes = character?.episode.compactMap { $0 } {
                 Section(header: Text("Episodes")) {
                     ForEach(episodes, id: \.id) { episode in
                         NavigationLink(
@@ -67,11 +63,11 @@ struct GraphCharacterViewDetailDetailView: View {
                                         .foregroundColor(.gray)
                                         .font(.footnote)
                                 }
-                            })
+                            }
+                        )
                     }
                 }
             }
-            
         }
         .listStyle(GroupedListStyle())
         .navigationTitle(character?.name ?? "Loading...")
@@ -90,7 +86,7 @@ struct GraphCharacterViewDetailDetailView: View {
                                 icon: "waveform.path.ecg.rectangle",
                                 value: character?.status ?? "loading...")
                 })
-            .redacted(reason: character == nil ? .placeholder : [])
+                .redacted(reason: character == nil ? .placeholder : [])
     }
     
 //    private var locationSection: some View {
