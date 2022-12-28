@@ -10,31 +10,30 @@ import Foundation
 import SwiftUI
 
 final class LaunchViewModel: ObservableObject {
-    
     @Published public var characters: [CharacterSmall]?
-    
+    public var totalPage: Int?
+    public var totalCharacters: Int?
+
     public var placeholders = Array(repeating: CharacterSmall(id: GraphQLID(0),
                                                               name: nil,
                                                               image: nil,
                                                               episode: [nil]), count: 10)
-    
-    public var currentPage = 1 {
+
+    var currentPage = 1 {
         didSet {
             fetchCharacters()
         }
     }
-    
-    public var shouldDisplayNextPage: Bool {
+
+    var shouldDisplayNextPage: Bool {
         if characters?.isEmpty == false,
            let totalPages = totalPage,
-           currentPage < totalPages {
+           currentPage < totalPages
+        {
             return true
         }
         return false
     }
-
-    public private(set) var totalPage: Int?
-    public private(set) var totalCharacters: Int?
 
     func fetchCharacters() {
         let fetchedPage = currentPage
@@ -46,11 +45,11 @@ final class LaunchViewModel: ObservableObject {
                         self?.characters?.append(contentsOf: newCharacters)
                     }
                 } else {
-                    self?.characters = result.data?.characters?.results?.compactMap{ $0?.fragments.characterSmall }
+                    self?.characters = result.data?.characters?.results?.compactMap { $0?.fragments.characterSmall }
                 }
                 self?.totalPage = result.data?.characters?.info?.pages
                 self?.totalCharacters = result.data?.characters?.info?.count
-        
+
             case .failure(let error):
                 print("GraphQL query error: \(error)")
             }
