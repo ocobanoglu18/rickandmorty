@@ -20,9 +20,9 @@ struct GraphCharacterView: View {
                     })
             }
 
-            if data.shouldDisplayNextPage {
-                nextPageView
-            }
+//            if data.shouldDisplayNextPage {
+//                nextPageView
+//            }
 
         }.scrollIndicators(ScrollIndicatorVisibility.hidden)
             .onAppear {

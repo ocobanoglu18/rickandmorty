@@ -48,8 +48,8 @@ struct GraphCharacterViewDetailDetailView: View {
             }
             
             infoSection
-//            locationSection
-//
+            locationSection
+
             if let episodes = character?.episode.compactMap { $0 } {
                 Section(header: Text("Episodes")) {
                     ForEach(episodes, id: \.id) { episode in
@@ -89,27 +89,27 @@ struct GraphCharacterViewDetailDetailView: View {
                 .redacted(reason: character == nil ? .placeholder : [])
     }
     
-//    private var locationSection: some View {
-//        Section(header: Text("Location")) {
-//            NavigationLink(
-//                destination:
-//                    LocationDetailView(id: character?.location?.id ?? GraphQLID(0)),
-//                label: {
-//                    InfoRowView(label: "Location",
-//                                icon: "map",
-//                                value: character?.location?.name ?? "loading...")
-//                })
-//            NavigationLink(
-//                destination:
-//                    LocationDetailView(id: character?.origin?.id ?? GraphQLID(0)),
-//                label: {
-//                    InfoRowView(label: "Origin",
-//                                icon: "paperplane",
-//                                value: character?.origin?.name ?? "loading...")
-//                })
-//        }
-//        .redacted(reason: character == nil ? .placeholder : [])
-//    }
+    private var locationSection: some View {
+        Section(header: Text("Location")) {
+            NavigationLink(
+                destination:
+                    GraphLocationViewDetailView(id: character?.location?.id ?? GraphQLID(0)),
+                label: {
+                    InfoRowView(label: "Location",
+                                icon: "map",
+                                value: character?.location?.name ?? "loading...")
+                })
+            NavigationLink(
+                destination:
+                    GraphLocationViewDetailView(id: character?.origin?.id ?? GraphQLID(0)),
+                label: {
+                    InfoRowView(label: "Origin",
+                                icon: "paperplane",
+                                value: character?.origin?.name ?? "loading...")
+                })
+        }
+        .redacted(reason: character == nil ? .placeholder : [])
+    }
 }
 
 struct GraphCharacterViewDetailDetailView_Previews: PreviewProvider {
