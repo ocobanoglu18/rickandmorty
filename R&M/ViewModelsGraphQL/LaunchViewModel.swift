@@ -19,6 +19,8 @@ final class LaunchViewModel: ObservableObject {
                                                               image: nil,
                                                               episode: [nil]), count: 10)
 
+    
+    
     var currentPage = 1 {
         didSet {
             fetchCharacters()

@@ -20,6 +20,10 @@ struct ContentViewGraphQL: View {
                 .tabItem {
                     Image(systemName: "list.triangle")
                 }
+            GraphLocationView()
+                .tabItem {
+                    Image(systemName: "map")
+                }
         }
     }
 }
