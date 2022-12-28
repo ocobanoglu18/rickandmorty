@@ -20,7 +20,6 @@
 		0932DBE0294B397900BF91AD /* GraphCharacterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0932DBDF294B397900BF91AD /* GraphCharacterView.swift */; };
 		0932DBE2294B436100BF91AD /* SİngleQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0932DBE1294B436100BF91AD /* SİngleQuery.swift */; };
 		093F4F7D29526E4B0078E183 /* GraphCharacterViewDetailDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 093F4F7C29526E4B0078E183 /* GraphCharacterViewDetailDetailView.swift */; };
-		093F4F7F29526ED40078E183 /* InfoRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 093F4F7E29526ED40078E183 /* InfoRowView.swift */; };
 		093F4F852953195D0078E183 /* GraphEpisodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 093F4F842953195D0078E183 /* GraphEpisodeView.swift */; };
 		093F4F87295319870078E183 /* GraphEpisodeDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 093F4F86295319870078E183 /* GraphEpisodeDetailView.swift */; };
 		093F4F89295319A00078E183 /* GraphEpisodeViewDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 093F4F88295319A00078E183 /* GraphEpisodeViewDetailView.swift */; };
@@ -76,7 +75,6 @@
 		0932DBDF294B397900BF91AD /* GraphCharacterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphCharacterView.swift; sourceTree = "<group>"; };
 		0932DBE1294B436100BF91AD /* SİngleQuery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SİngleQuery.swift"; sourceTree = "<group>"; };
 		093F4F7C29526E4B0078E183 /* GraphCharacterViewDetailDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphCharacterViewDetailDetailView.swift; sourceTree = "<group>"; };
-		093F4F7E29526ED40078E183 /* InfoRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoRowView.swift; sourceTree = "<group>"; };
 		093F4F842953195D0078E183 /* GraphEpisodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphEpisodeView.swift; sourceTree = "<group>"; };
 		093F4F86295319870078E183 /* GraphEpisodeDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphEpisodeDetailView.swift; sourceTree = "<group>"; };
 		093F4F88295319A00078E183 /* GraphEpisodeViewDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphEpisodeViewDetailView.swift; sourceTree = "<group>"; };
@@ -180,7 +178,6 @@
 		0932DBDE294B395500BF91AD /* GraphQLView */ = {
 			isa = PBXGroup;
 			children = (
-				093F4F7E29526ED40078E183 /* InfoRowView.swift */,
 				093F4F80295318E10078E183 /* GraphQLCharacterView */,
 				093F4F81295318FB0078E183 /* GraphQLEpisodeView */,
 				0993334E295C85500052CAC4 /* GraphQLLocationView */,
@@ -518,7 +515,6 @@
 				09CCD4362930B3A300E91B09 /* CharacterModel.swift in Sources */,
 				091B0F222940AAC80033B14F /* LocationDetailViewModel.swift in Sources */,
 				093F4F8B295319B50078E183 /* GraphEpisodeViewModel.swift in Sources */,
-				093F4F7F29526ED40078E183 /* InfoRowView.swift in Sources */,
 				09D2D94929124ADC00BB18C1 /* R_MApp.swift in Sources */,
 				093F4F89295319A00078E183 /* GraphEpisodeViewDetailView.swift in Sources */,
 				091B0EDE293F7E720033B14F /* Database.swift in Sources */,

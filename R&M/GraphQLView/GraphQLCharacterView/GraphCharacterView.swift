@@ -8,8 +8,9 @@
 import SwiftUI
 
 struct GraphCharacterView: View {
+    
     @StateObject var data = LaunchViewModel()
-
+    
     var body: some View {
         List {
             ForEach(data.characters ?? data.placeholders, id: \.id) { character in
@@ -19,12 +20,12 @@ struct GraphCharacterView: View {
                         GraphCharacterDetailView(character: character)
                     })
             }
-
-//            if data.shouldDisplayNextPage {
-//                nextPageView
-//            }
-
-        }.scrollIndicators(ScrollIndicatorVisibility.hidden)
+            
+            if data.shouldDisplayNextPage {
+                nextPageView
+            }
+            
+        }
             .onAppear {
                 data.fetchCharacters()
             }
@@ -41,7 +42,8 @@ struct GraphCharacterView: View {
         }
         .onAppear(perform: {
             data.currentPage += 1
-        })
+            }
+        )
     }
 }
 
@@ -50,3 +52,20 @@ struct GraphCharacterView_Previews: PreviewProvider {
         GraphCharacterView()
     }
 }
+
+struct InfoRowView: View {
+    let label: String
+    let icon: String
+    let value: String
+    
+    var body: some View {
+        HStack {
+            Label(label, systemImage: icon).foregroundColor(Color.white)
+            Spacer()
+            Text(value)
+                .foregroundColor(.white)
+                .fontWeight(.bold)
+        }
+    }
+}
+
