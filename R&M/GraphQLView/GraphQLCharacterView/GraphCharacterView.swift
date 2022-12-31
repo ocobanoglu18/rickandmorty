@@ -65,7 +65,8 @@ struct InfoRowView: View {
             Text(value)
                 .foregroundColor(.white)
                 .fontWeight(.bold)
-        }
+        }.frame(width: 370, height: 70).background(CustomColor.cardColor)
+            .cornerRadius(20)
     }
 }
 
