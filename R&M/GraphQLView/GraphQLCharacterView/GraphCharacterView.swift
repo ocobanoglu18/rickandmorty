@@ -13,19 +13,25 @@ struct GraphCharacterView: View {
     
     var body: some View {
         NavigationView{
-        List {
-            ForEach(data.characters ?? data.placeholders, id: \.id) { character in
-                NavigationLink(
-                    destination: GraphCharacterViewDetailDetailView(id: character.id!),
-                    label: {
-                        GraphCharacterDetailView(character: character)
-                    })
-            }
             
-        }
+   
+                List {
+                ForEach(data.characters ?? data.placeholders, id: \.id) { character in
+                    NavigationLink(
+                        destination: GraphCharacterViewDetailDetailView(id: character.id!),
+                        label: {
+                            GraphCharacterDetailView(character: character)
+                        })
+                }
+                
+                }
+ 
     }
             .onAppear {
                 data.fetchCharacters()
+                UITableView.appearance().backgroundColor = UIColor(.black)
+                UITableViewCell.appearance().backgroundColor = UIColor(.black)
+                
             }
     }
 }
