@@ -24,15 +24,6 @@ class GraphEpisodeViewModel: ObservableObject {
         }
     }
 
-    var shouldDisplayNextPage: Bool {
-        if episodes?.isEmpty == false,
-           let totalPages = totalPage,
-           currentPage < totalPages
-        {
-            return true
-        }
-        return false
-    }
 
     func fetchEpisodes() {
         let fetchedPage = currentPage

@@ -21,7 +21,7 @@ struct GraphLocationDetailView: View {
             Spacer()
             Text(location.dimension ?? "Loading...")
                 .foregroundColor(.white)
-                .font(.footnote)
+            Image(systemName: "location.viewfinder").foregroundColor(Color.white).padding(.trailing, 15)
         }
     }
 }
