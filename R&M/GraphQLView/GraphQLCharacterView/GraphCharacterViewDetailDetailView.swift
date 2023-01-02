@@ -47,8 +47,37 @@ struct GraphCharacterViewDetailDetailView: View {
                 }
             }
             
-            infoSection
-            locationSection
+            Section(header: Text("Info"),
+                    content: {
+                        InfoRowView(label: "Species",
+                                    icon: "hare",
+                                    value: character?.species ?? "loading...")
+                        InfoRowView(label: "Gender",
+                                    icon: "eyes",
+                                    value: character?.gender ?? "loading...")
+                        InfoRowView(label: "Status",
+                                    icon: "waveform.path.ecg.rectangle",
+                                    value: character?.status ?? "loading...")
+                    })
+            
+            Section(header: Text("Location")) {
+                NavigationLink(
+                    destination:
+                        GraphLocationViewDetailView(id: character?.location?.id ?? GraphQLID(0)),
+                    label: {
+                        InfoRowView(label: "Location",
+                                    icon: "map",
+                                    value: character?.location?.name ?? "loading...")
+                    })
+                NavigationLink(
+                    destination:
+                        GraphLocationViewDetailView(id: character?.origin?.id ?? GraphQLID(0)),
+                    label: {
+                        InfoRowView(label: "Origin",
+                                    icon: "paperplane",
+                                    value: character?.origin?.name ?? "loading...")
+                    })
+            }
 
             if let episodes = character?.episode.compactMap { $0 } {
                 Section(header: Text("Episodes")) {
@@ -72,22 +101,7 @@ struct GraphCharacterViewDetailDetailView: View {
         .listStyle(GroupedListStyle())
         .navigationTitle(character?.name ?? "Loading...")
     }
-    
-    private var infoSection: some View {
-        Section(header: Text("Info"),
-                content: {
-                    InfoRowView(label: "Species",
-                                icon: "hare",
-                                value: character?.species ?? "loading...")
-                    InfoRowView(label: "Gender",
-                                icon: "eyes",
-                                value: character?.gender ?? "loading...")
-                    InfoRowView(label: "Status",
-                                icon: "waveform.path.ecg.rectangle",
-                                value: character?.status ?? "loading...")
-                })
-                .redacted(reason: character == nil ? .placeholder : [])
-    }
+
     
     private var locationSection: some View {
         Section(header: Text("Location")) {
