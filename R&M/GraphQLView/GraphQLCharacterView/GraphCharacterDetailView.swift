@@ -36,10 +36,8 @@ struct GraphCharacterDetailView: View {
             VStack(alignment: .leading) {
                 Text(character.name ?? "Loading...")
                     .foregroundColor(.white)
-                    .redacted(reason: character.name == nil ? .placeholder : [])
                 Text("\(character.episode.count ?? 0) episodes")
                     .foregroundColor(.white)
-                    .redacted(reason: character.episode == nil ? .placeholder : [])
             }
         }
     }
