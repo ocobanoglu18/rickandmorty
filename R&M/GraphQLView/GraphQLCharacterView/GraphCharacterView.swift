@@ -12,6 +12,7 @@ struct GraphCharacterView: View {
     @StateObject var data = LaunchViewModel()
     
     var body: some View {
+        NavigationView{
         List {
             ForEach(data.characters ?? data.placeholders, id: \.id) { character in
                 NavigationLink(
@@ -22,6 +23,7 @@ struct GraphCharacterView: View {
             }
             
         }
+    }
             .onAppear {
                 data.fetchCharacters()
             }
