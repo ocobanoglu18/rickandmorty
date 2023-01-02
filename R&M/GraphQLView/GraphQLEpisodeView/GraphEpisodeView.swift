@@ -22,6 +22,7 @@ struct GraphEpisodeView: View {
                 }
             }
             .navigationTitle("Episodes")
+            .scrollIndicators(ScrollIndicatorVisibility.hidden)
      
             .onAppear {
                 data.fetchEpisodes()

@@ -8,25 +8,29 @@
 import SwiftUI
 
 struct GraphCharacterView: View {
+
     
     @StateObject var data = LaunchViewModel()
     
     var body: some View {
         NavigationView{
-            
-   
                 List {
                 ForEach(data.characters ?? data.placeholders, id: \.id) { character in
                     NavigationLink(
                         destination: GraphCharacterViewDetailDetailView(id: character.id!),
                         label: {
                             GraphCharacterDetailView(character: character)
-                        })
+                        }
+                    )
                 }
                 
-                }
+                }.navigationTitle("Characters")
+                .scrollContentBackground(.hidden)
+                .scrollIndicators(ScrollIndicatorVisibility.hidden)
+                .listRowBackground(Color.purple)
+              
  
-    }
+        }
             .onAppear {
                 data.fetchCharacters()
                 UITableView.appearance().backgroundColor = UIColor(.black)

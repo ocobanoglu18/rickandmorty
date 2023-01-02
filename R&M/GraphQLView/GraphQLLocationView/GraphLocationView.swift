@@ -21,6 +21,7 @@ struct GraphLocationView: View {
                         })
                 }
             }
+            .scrollIndicators(ScrollIndicatorVisibility.hidden)
             .navigationTitle("Locations")
             .onAppear {
                 data.fetchLocations()

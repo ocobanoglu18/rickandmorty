@@ -31,7 +31,7 @@ struct GraphLocationViewDetailView: View {
                 InfoRowView(label: "Type",
                             icon: "newspaper",
                             value: location?.type ?? "loading...")
-            }.redacted(reason: query.data?.location == nil ? .placeholder : [])
+            }
             
             if let characters = location?.residents.compactMap{ $0 }.filter{ $0.id != nil } {
                 Section(header: Text("Residents")) {

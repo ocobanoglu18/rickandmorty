@@ -31,7 +31,7 @@ struct GraphEpisodeViewDetailView: View {
                 InfoRowView(label: "Code",
                             icon: "barcode",
                             value: episode?.episode ?? "loading...")
-            }.redacted(reason: episode == nil ? .placeholder : [])
+            }
             
             if let characters = episode?.characters.compactMap{ $0 } {
                 Section(header: Text("Characters")) {
