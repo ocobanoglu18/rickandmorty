@@ -10,6 +10,8 @@ import Apollo
 
 class GraphLocationViewModel: ObservableObject {
     @Published public var locations: [LocationDetail]?
+    var totalPage: Int?
+    var totalCharacters: Int?
     public var placeholders = Array(repeating: LocationDetail(id: GraphQLID(0),
                                                               name: nil,
                                                               type: nil,
@@ -21,18 +23,7 @@ class GraphLocationViewModel: ObservableObject {
             fetchLocations()
         }
     }
-    
-    public var shouldDisplayNextPage: Bool {
-        if locations?.isEmpty == false,
-           let totalPages = totalPage,
-           currentPage < totalPages {
-            return true
-        }
-        return false
-    }
-    
-    public private(set) var totalPage: Int?
-    public private(set) var totalCharacters: Int?
+
     
     func fetchLocations() {
         let fetchedPage = currentPage

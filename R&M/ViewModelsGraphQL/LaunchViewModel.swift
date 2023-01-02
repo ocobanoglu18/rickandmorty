@@ -20,23 +20,11 @@ final class LaunchViewModel: ObservableObject {
                                                               episode: [nil]), count: 10)
 
     
-    
     var currentPage = 1 {
         didSet {
             fetchCharacters()
         }
     }
-
-    var shouldDisplayNextPage: Bool {
-        if characters?.isEmpty == false,
-           let totalPages = totalPage,
-           currentPage < totalPages
-        {
-            return true
-        }
-        return false
-    }
-
     func fetchCharacters() {
         let fetchedPage = currentPage
         Network.shared.apollo.fetch(query: GetCharactersQuery(page: currentPage)) { [weak self] result in
