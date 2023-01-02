@@ -122,7 +122,6 @@ struct GraphCharacterViewDetailDetailView: View {
                                 value: character?.origin?.name ?? "loading...")
                 })
         }
-        .redacted(reason: character == nil ? .placeholder : [])
     }
 }
 

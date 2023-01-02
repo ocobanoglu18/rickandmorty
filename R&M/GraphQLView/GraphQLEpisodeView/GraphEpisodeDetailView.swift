@@ -17,13 +17,11 @@ struct GraphEpisodeDetailView: View {
                     .foregroundColor(.white)
                     .fontWeight(.bold)
                 Text(episode.episode ?? "Loading...")
-                    .font(.footnote)
             }
             Spacer()
             Text(episode.airDate ?? "Loading...")
                 .foregroundColor(.white)
-                .font(.footnote)
-        }.redacted(reason: episode.name == nil ? .placeholder : [])
+        }
 
     }
 }

@@ -22,7 +22,7 @@ struct GraphLocationDetailView: View {
             Text(location.dimension ?? "Loading...")
                 .foregroundColor(.white)
                 .font(.footnote)
-        }.redacted(reason: location.name == nil ? .placeholder : [])
+        }
     }
 }
 

@@ -20,13 +20,13 @@ struct GraphCharacterDetailView: View {
                     content: { image in
                         image.resizable()
                             .aspectRatio(contentMode: .fit)
-                            .frame(maxWidth: 300, maxHeight: 100)
+                            .frame(width: 130, height: 150)
                     },
                     placeholder: {
                         ProgressView()
                     }
                 )
-                .frame(width: 80, height: 80)
+                .frame(width: 130, height: 150)
                 .cornerRadius(10)
             } else {
                 RoundedRectangle(cornerRadius: 25)
@@ -47,7 +47,6 @@ struct GraphCharacterDetailView: View {
                 .padding(.trailing, 6)
                 .foregroundColor(.white)
             
-        }.frame(width: 370, height: 70).background(CustomColor.cardColor)
-            .cornerRadius(20)
+        }.frame(width: 370, height: 70).cornerRadius(20)
     }
 }
