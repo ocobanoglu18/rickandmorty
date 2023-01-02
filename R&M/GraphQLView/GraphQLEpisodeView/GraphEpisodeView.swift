@@ -20,9 +20,6 @@ struct GraphEpisodeView: View {
                             GraphEpisodeDetailView(episode: episode)
                         })
                 }
-                if data.shouldDisplayNextPage {
-                    nextPageView
-                }
             }
             .navigationTitle("Episodes")
      
@@ -30,20 +27,6 @@ struct GraphEpisodeView: View {
                 data.fetchEpisodes()
             }
         }
-    }
-    
-    private var nextPageView: some View {
-        HStack {
-            Spacer()
-            VStack {
-                ProgressView()
-                Text("Loading next page...")
-            }
-            Spacer()
-        }
-        .onAppear(perform: {
-            data.currentPage += 1
-        })
     }
 }
 

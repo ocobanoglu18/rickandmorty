@@ -21,29 +21,10 @@ struct GraphCharacterView: View {
                     })
             }
             
-            if data.shouldDisplayNextPage {
-                nextPageView
-            }
-            
         }
             .onAppear {
                 data.fetchCharacters()
             }
-    }
-
-    private var nextPageView: some View {
-        HStack {
-            Spacer()
-            VStack {
-                ProgressView()
-                Text("Loading next page...")
-            }
-            Spacer()
-        }
-        .onAppear(perform: {
-            data.currentPage += 1
-            }
-        )
     }
 }
 

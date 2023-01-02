@@ -20,29 +20,12 @@ struct GraphLocationView: View {
                             GraphLocationDetailView(location: location)
                         })
                 }
-                if data.shouldDisplayNextPage {
-                    nextPageView
-                }
             }
             .navigationTitle("Locations")
             .onAppear {
                 data.fetchLocations()
             }
         }
-    }
-    
-    private var nextPageView: some View {
-        HStack {
-            Spacer()
-            VStack {
-                ProgressView()
-                Text("Loading next page...")
-            }
-            Spacer()
-        }
-        .onAppear(perform: {
-            data.currentPage += 1
-        })
     }
 }
 
